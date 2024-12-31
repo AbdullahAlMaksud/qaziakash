@@ -1,13 +1,46 @@
+"use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Button } from "../ui/button";
+import UserNavMenu from "./desktop/usernavmenu";
 import Usermenu from "./mobile/usermenu/usermenu";
-import UserNavMenu from "./pc/usernavmenu";
-// import { UserNavMenu } from "./pc/usernavmenu";
-
+const pathColors = new Map([
+  ["/about", "bg-purple-700"],
+  ["/contact", "bg-green-700"],
+  ["/services", "bg-orange-700"],
+  ["/blog", "bg-red-700"],
+]);
 const Navbar = () => {
+  const path = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 100;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const getNavbarClass = () => {
+    if (path === "/") {
+      return scrolled
+        ? "bg-blue-700 transition-colors duration-300"
+        : "bg-transparent";
+    }
+    return `${
+      pathColors.get(path) || "bg-blue-700"
+    } transition-colors duration-300`;
+  };
+
   return (
-    <section className="bg-transparent fixed w-full min-h-14 max-h-14 z-50 flex items-center">
+    <section
+      className={`${getNavbarClass()} fixed w-full min-h-14 max-h-14 z-50 flex items-center`}
+    >
       <section className="md:container w-11/12 mx-auto px-2 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 ">
