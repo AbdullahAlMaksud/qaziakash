@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="">
           <div className="flex items-center gap-2 ">
             <Image
-              src="/icon.svg"
+              src="/fav-icon.svg"
               width={40}
               height={100}
               alt="icon"
