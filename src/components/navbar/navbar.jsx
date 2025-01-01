@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -44,7 +45,7 @@ const Navbar = () => {
       <section className="md:container w-11/12 mx-auto px-2 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 ">
-          <div className="flex items-center gap-2 ">
+          <Link href="/" className="flex items-center gap-2 ">
             <Image
               src="/fav-icon.svg"
               width={40}
@@ -55,7 +56,7 @@ const Navbar = () => {
             <h2 className="font-english text-white font-medium text-xl">
               Qazi Akash
             </h2>
-          </div>
+          </Link>
 
           <div>
             <ul className="hidden lg:flex items-center gap-1">
