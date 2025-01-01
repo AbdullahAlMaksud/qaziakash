@@ -30,8 +30,8 @@ const Navbar = () => {
   const getNavbarClass = () => {
     if (path === "/") {
       return scrolled
-        ? "bg-blue-700 transition-colors duration-300"
-        : "bg-transparent";
+        ? "bg-white/10 backdrop-blur-md transition-colors duration-300 w-full mx-auto rounded-b fixed"
+        : "bg-transparent w-full fixed";
     }
     return `${
       pathColors.get(path) || "bg-blue-700"
@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <section
-      className={`${getNavbarClass()} fixed w-full min-h-14 max-h-14 z-50 flex items-center`}
+      className={`${getNavbarClass()} min-h-14 max-h-14 z-50 flex items-center`}
     >
       <section className="md:container w-11/12 mx-auto px-2 flex items-center justify-between">
         {/* Logo */}

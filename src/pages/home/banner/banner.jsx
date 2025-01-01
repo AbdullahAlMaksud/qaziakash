@@ -54,11 +54,11 @@ const Banner = () => {
                     {book.categories.join(", ")}
                   </h3>
                   <h2 className="text-3xl font-bold">{book.title}</h2>
-                  <p className="font-light text-xs text-center md:text-left">
+                  <p className="font-light pt-3 text-center md:text-left">
                     {book.description}
                   </p>
 
-                  <div className="flex items-center pt-5 gap-4">
+                  <div className="flex items-center font-english font-normal pt-5 gap-4">
                     <Button className="rounded-none">View Details</Button>
                     <Button className="bg-transparent hover:bg-transparent text-white shadow-none border-b rounded-none px-0 pb-0.5 h-7">
                       Read Free Demo
@@ -97,7 +97,7 @@ const Banner = () => {
                     alt={book.title}
                     height={100}
                     width={100}
-                    className="w-40 h-60 object-cover border-4 border-gray-200"
+                    className="w-72 h-[26rem] object-cover border-4 border-gray-200"
                   ></Image>
                 </div>
               </div>
