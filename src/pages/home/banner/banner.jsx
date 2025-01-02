@@ -45,7 +45,7 @@ const Banner = () => {
           <SwiperSlide key={book.id}>
             <section
               key={book.id}
-              className="w-11/12 mx-auto flex py-10 items-center lg:items-start justify-between"
+              className="w-11/12 md:container mx-auto flex py-10 items-center lg:items-start justify-between"
             >
               <div className="flex items-center justify-between lg:items-start flex-col-reverse md:flex-row gap-2 w-full">
                 <div className="text-white w-full md:w-1/2 flex flex-col items-center md:items-start">
@@ -54,7 +54,7 @@ const Banner = () => {
                     {book.categories.join(", ")}
                   </h3>
                   <h2 className="text-3xl font-bold">{book.title}</h2>
-                  <p className="font-light pt-3 text-center md:text-left">
+                  <p className="lg:block hidden font-light pt-3 text-center md:text-left">
                     {book.description}
                   </p>
 
