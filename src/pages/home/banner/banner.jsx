@@ -54,7 +54,7 @@ const Banner = () => {
                     {book.categories.join(", ")}
                   </h3>
                   <h2 className="text-3xl font-bold">{book.title}</h2>
-                  <p className="lg:block hidden font-light pt-3 text-center md:text-left">
+                  <p className="md:block hidden font-light pt-3 text-center md:text-left">
                     {book.description}
                   </p>
 
