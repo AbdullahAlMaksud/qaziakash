@@ -22,7 +22,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${tiroBangla.variable}`}>
+      <body
+        className={`${inter.variable} ${tiroBangla.variable} bg-blue-100/50`}
+      >
         <nav>
           <Navbar />
         </nav>

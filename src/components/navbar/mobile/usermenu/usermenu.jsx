@@ -13,9 +13,9 @@ import { MenuSquare } from "lucide-react";
 
 const Usermenu = () => {
   return (
-    <Sheet>
+    <Sheet className="md:hidden block">
       <SheetTrigger asChild>
-        <Button variant="outline" className="rounded-none">
+        <Button variant="outline" className="rounded-none md:hidden block">
           <MenuSquare />
         </Button>
       </SheetTrigger>
