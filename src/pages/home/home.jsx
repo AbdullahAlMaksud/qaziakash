@@ -7,7 +7,7 @@ const HomePage = () => {
     <section>
       <Banner />
       <Author />
-      <Books/>
+      <Books />
     </section>
   );
 };

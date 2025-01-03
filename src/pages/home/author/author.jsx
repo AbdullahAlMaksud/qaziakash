@@ -6,6 +6,7 @@ const Author = () => {
       <div className="flex items-center justify-center">
         <div className="relative">
           <Image
+          unoptimized
             className="w-[15rem] lg:w-[25rem] lg:h-[27rem] h-[16rem] object-cover"
             alt="Qazi Akash"
             width={100}

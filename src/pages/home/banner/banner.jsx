@@ -58,10 +58,10 @@ const Banner = () => {
                     {book.description}
                   </p>
 
-                  <div className="flex items-center font-english font-normal pt-5 gap-4">
-                    <Button className="rounded-none">View Details</Button>
+                  <div className="flex items-center font-banglas font-normal pt-5 gap-4">
+                    <Button className="rounded-none">বিস্তারিত দেখুন</Button>
                     <Button className="bg-transparent hover:bg-transparent text-white shadow-none border-b rounded-none px-0 pb-0.5 h-7">
-                      Read Free Demo
+                      কিছু অংশ পড়ুন
                     </Button>
                   </div>
 
@@ -69,23 +69,34 @@ const Banner = () => {
                     <div className="flex items-start gap-2">
                       <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
                       <div className="-mt-1">
-                        <p className="text-lg font-bold">Pages:</p>
-                        <p>{book.pages} pages</p>
+                        <p className="text-lg font-bold">পৃষ্ঠা সংখ্যা:</p>
+                        <p className="font-['kalpurush']">
+                          {book.pages} পৃষ্ঠা
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
                       <div className="-mt-1">
-                        <p className="text-lg font-bold">Length:</p>
-                        <p>{book.timeToRead} Hours</p>
+                        <p className="text-lg font-bold">প্রকাশক:</p>
+                        <p className="font-['kalpurush']">
+                          {book.edition}ম সংস্করণ
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
                       <div className="-mt-1">
-                        <p className="text-lg font-bold">Ratings:</p>
+                        <p className="text-lg font-bold">রেটিং:</p>
                         <p>
-                          {book.rating}/5 ({book.ratedByUser} ratings)
+                          <span className="font-['kalpurush']">
+                            {book.rating}/5{" "}
+                          </span>
+                          ({" "}
+                          <span className="font-['kalpurush']">
+                            {book.ratedByUser}
+                          </span>{" "}
+                          জন রেটিং করেছেন)
                         </p>
                       </div>
                     </div>
@@ -93,6 +104,7 @@ const Banner = () => {
                 </div>
                 <div>
                   <Image
+                    unoptimized
                     src={book?.cover}
                     alt={book.title}
                     height={100}

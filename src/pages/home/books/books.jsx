@@ -18,7 +18,7 @@ const Books = () => {
 
   console.log(grid);
   return (
-    <section className="my-10 w-11/12 mx-auto">
+    <section className="my-10 w-11/12 lg:container lg:mt-20 mx-auto">
       <div className="flex justify-between items-center">
         <h2 className="mb-4 text-3xl font-bold text-blue-950">বইপত্র</h2>
         <Button onClick={handleGrid} className="rounded-none">
@@ -27,7 +27,9 @@ const Books = () => {
       </div>
       <section
         className={`grid ${
-          grid ? "grid-cols-2" : "grid-cols-1"
+          grid
+            ? "grid-cols-2 lg:grid-cols-4 lg:mx-auto"
+            : "grid-cols-1 lg:grid-cols-3 lg:mx-auto lg:gap-4"
         } justify-between md:container gap-4`}
       >
         {books.map((book) => (
@@ -36,22 +38,27 @@ const Books = () => {
             className={`${
               grid
                 ? "bg-white/20 shadow-sm hover:shadow-md backdrop-blur-md pb-2 flex flex-col items-center"
-                : "flex-row flex items-end bg-secondary shadow-sm"
+                : "flex-row flex items-end hover:shadow-md shadow-sm"
             } `}
           >
             <Image
+              unoptimized
               src={book.cover}
               alt={book.title}
               height={100}
               width={100}
               className={`${
                 grid
-                  ? "h-60 w-full object-cover"
+                  ? "h-60 lg:h-[24rem]  w-[90%] object-cover object-top"
                   : "h-full w-20 object-cover object-top"
               }`}
             ></Image>
             <div className="px-2 pt-1">
-              <p className={` ${grid ? "text-center" : ""}   font-bangla`}>
+              <p
+                className={` ${
+                  grid ? "text-center lg:text-2xl pt-2 font-bold" : "text-xl"
+                }   font-bangla`}
+              >
                 {book.title}
               </p>
               {!grid && (
@@ -77,13 +84,17 @@ const Books = () => {
             </div>
           </div>
         ))}
-        <div className="bg-gray-300 flex items-center justify-center">
+        <div
+          className={`${
+            !grid && "col-span-3"
+          } bg-white/20  shadow-sm hover:shadow-md flex items-center justify-center`}
+        >
           <Link
             href={"/"}
             className={`${
               grid
                 ? "font-bangla px-4 py-1 bg-primary font-bold shadow-sm"
-                : "bg-primary w-full text-center py-1"
+                : "bg-primary w-full h-full flex items-center justify-center text-center py-1 "
             } `}
           >
             সব বই
