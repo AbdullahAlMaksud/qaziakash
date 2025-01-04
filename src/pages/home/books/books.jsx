@@ -26,11 +26,11 @@ const Books = () => {
         </Button>
       </div>
       <section
-        className={`grid ${
+        className={` ${
           grid
-            ? "grid-cols-2 lg:grid-cols-4 lg:mx-auto"
-            : "grid-cols-1 lg:grid-cols-3 lg:mx-auto lg:gap-4"
-        } justify-between md:container gap-4`}
+            ? "grid grid-cols-2 lg:grid-cols-4 lg:mx-auto"
+            : "flex flex-col lg:grid gap-2 lg:grid-cols-3 lg:mx-auto lg:gap-4"
+        }  md:container gap-4`}
       >
         {books.map((book) => (
           <div
@@ -49,7 +49,7 @@ const Books = () => {
               width={100}
               className={`${
                 grid
-                  ? "h-60 lg:h-[24rem]  w-[90%] object-cover object-top"
+                  ? "h-60 md:h-[32rem]  w-[90%] object-cover object-top"
                   : "h-full w-20 object-cover object-top"
               }`}
             ></Image>

@@ -22,6 +22,19 @@ const Banner = () => {
   }, []);
   console.log(bookShortInfo.length);
 
+  const getEditionSuffix = (edition) => {
+    switch (edition) {
+      case 1:
+        return "প্রথম";
+      case 2:
+        return "দ্বিতীয়";
+      case 3:
+        return "তৃতীয়";
+      default:
+        return "প্রথম";
+    }
+  };
+
   return (
     <section
       className="w-full
@@ -45,7 +58,7 @@ const Banner = () => {
           <SwiperSlide key={book.id}>
             <section
               key={book.id}
-              className="w-11/12 md:container mx-auto flex py-10 items-center lg:items-start justify-between"
+              className="w-11/12 lg:container mx-auto flex py-10 items-center lg:items-start justify-between"
             >
               <div className="flex items-center justify-between lg:items-start flex-col-reverse md:flex-row gap-2 w-full">
                 <div className="text-white w-full md:w-1/2 flex flex-col items-center md:items-start">
@@ -69,7 +82,7 @@ const Banner = () => {
                     <div className="flex items-start gap-2">
                       <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
                       <div className="-mt-1">
-                        <p className="text-lg font-bold">পৃষ্ঠা সংখ্যা:</p>
+                        <p className="text-lg font-bold">পৃষ্ঠা:</p>
                         <p className="font-['kalpurush']">
                           {book.pages} পৃষ্ঠা
                         </p>
@@ -78,25 +91,9 @@ const Banner = () => {
                     <div className="flex items-start gap-2">
                       <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
                       <div className="-mt-1">
-                        <p className="text-lg font-bold">প্রকাশক:</p>
+                        <p className="text-lg font-bold">সংস্করণ:</p>
                         <p className="font-['kalpurush']">
-                          {book.edition}ম সংস্করণ
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
-                      <div className="-mt-1">
-                        <p className="text-lg font-bold">রেটিং:</p>
-                        <p>
-                          <span className="font-['kalpurush']">
-                            {book.rating}/5{" "}
-                          </span>
-                          ({" "}
-                          <span className="font-['kalpurush']">
-                            {book.ratedByUser}
-                          </span>{" "}
-                          জন রেটিং করেছেন)
+                          {getEditionSuffix(book.edition)}
                         </p>
                       </div>
                     </div>
