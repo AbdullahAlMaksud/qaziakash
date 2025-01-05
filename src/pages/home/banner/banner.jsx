@@ -22,6 +22,19 @@ const Banner = () => {
   }, []);
   console.log(bookShortInfo.length);
 
+  const getEditionSuffix = (edition) => {
+    switch (edition) {
+      case 1:
+        return "প্রথম";
+      case 2:
+        return "দ্বিতীয়";
+      case 3:
+        return "তৃতীয়";
+      default:
+        return "প্রথম";
+    }
+  };
+
   return (
     <section
       className="w-full
@@ -45,7 +58,7 @@ const Banner = () => {
           <SwiperSlide key={book.id}>
             <section
               key={book.id}
-              className="w-11/12 md:container mx-auto flex py-10 items-center lg:items-start justify-between"
+              className="w-11/12 lg:container mx-auto flex py-10 items-center lg:items-start justify-between"
             >
               <div className="flex items-center justify-between lg:items-start flex-col-reverse md:flex-row gap-2 w-full">
                 <div className="text-white w-full md:w-1/2 flex flex-col items-center md:items-start">
@@ -58,10 +71,10 @@ const Banner = () => {
                     {book.description}
                   </p>
 
-                  <div className="flex items-center font-english font-normal pt-5 gap-4">
-                    <Button className="rounded-none">View Details</Button>
+                  <div className="flex items-center font-banglas font-normal pt-5 gap-4">
+                    <Button className="rounded-none">বিস্তারিত দেখুন</Button>
                     <Button className="bg-transparent hover:bg-transparent text-white shadow-none border-b rounded-none px-0 pb-0.5 h-7">
-                      Read Free Demo
+                      কিছু অংশ পড়ুন
                     </Button>
                   </div>
 
@@ -69,23 +82,18 @@ const Banner = () => {
                     <div className="flex items-start gap-2">
                       <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
                       <div className="-mt-1">
-                        <p className="text-lg font-bold">Pages:</p>
-                        <p>{book.pages} pages</p>
+                        <p className="text-lg font-bold">পৃষ্ঠা:</p>
+                        <p className="font-['kalpurush']">
+                          {book.pages} পৃষ্ঠা
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
                       <div className="-mt-1">
-                        <p className="text-lg font-bold">Length:</p>
-                        <p>{book.timeToRead} Hours</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
-                      <div className="-mt-1">
-                        <p className="text-lg font-bold">Ratings:</p>
-                        <p>
-                          {book.rating}/5 ({book.ratedByUser} ratings)
+                        <p className="text-lg font-bold">সংস্করণ:</p>
+                        <p className="font-['kalpurush']">
+                          {getEditionSuffix(book.edition)}
                         </p>
                       </div>
                     </div>
@@ -93,6 +101,7 @@ const Banner = () => {
                 </div>
                 <div>
                   <Image
+                    unoptimized
                     src={book?.cover}
                     alt={book.title}
                     height={100}

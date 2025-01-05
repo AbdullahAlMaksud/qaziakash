@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
 import { Roboto_Condensed, Tiro_Bangla } from "next/font/google";
 import "./globals.css";
@@ -29,7 +30,9 @@ export default function RootLayout({ children }) {
           <Navbar />
         </nav>
         <main>{children}</main>
-        <footer></footer>
+        <section>
+          <Footer />
+        </section>
       </body>
     </html>
   );

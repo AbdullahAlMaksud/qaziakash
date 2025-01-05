@@ -126,3 +126,10 @@ body {
   filter: blur(100px) saturate(150%);
   opacity: 0.15;
 }
+
+@font-face {
+  font-family: "kalpurush";
+  src: url("/font/kalpurush.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
