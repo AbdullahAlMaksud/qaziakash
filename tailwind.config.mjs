@@ -14,6 +14,9 @@ export default {
   			],
   			bangla: [
   				'var(--font-tiro-bangla)'
+  			],
+			inter: [
+  				'var(--font-inter)'
   			]
   		},
   		colors: {

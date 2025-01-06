@@ -1,11 +1,18 @@
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
-import { Cardo, Tiro_Bangla } from "next/font/google";
+import { Cardo, Inter, Tiro_Bangla } from "next/font/google";
 import "./globals.css";
 
 export const cardo = Cardo({
   variable: "--font-english",
   weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const inter = Inter({
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -24,7 +31,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cardo.variable} ${tiroBangla.variable}`}>
+      <body
+        className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable}`}
+      >
         <nav>
           <Navbar />
         </nav>

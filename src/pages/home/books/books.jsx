@@ -1,4 +1,5 @@
 "use client";
+import TitleOne from "@/components/shared/titleOne/titleOne";
 import { Button } from "@/components/ui/button";
 import { useBooks } from "@/services/booksData";
 import Image from "next/image";
@@ -15,15 +16,9 @@ const Books = () => {
 
   console.log(grid);
   return (
-    <section className="my-10 bg-lightblue font-english lg:mt-20 mx-auto">
+    <section className="mt-10 bg-lightblue font-english lg:mt-20 mx-auto">
       <section className="py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
-        <h2 className="mb-4 text-5xl font-bold text-blue-950">
-          Author's Book Included
-        </h2>
-        {/* <Button onClick={handleGrid} className="rounded-none">
-          {grid === true ? <Grid /> : <List />}
-        </Button> */}
-        <hr className="w-10 h-0.5 bg-primary mb-14" />
+        <TitleOne title={"Author's Book Included"} />
 
         {/* Books Gallery */}
         <div className="flex font-bangla gap-2">

@@ -1,4 +1,6 @@
 "use client";
+import TitleOne from "@/components/shared/titleOne/titleOne";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Blogs = () => {
@@ -6,6 +8,15 @@ const Blogs = () => {
   useEffect(() => {
     getPosts();
   }, []);
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "2-digit",
+      year: "numeric",
+    });
+  };
 
   const getPosts = async () => {
     try {
@@ -20,25 +31,48 @@ const Blogs = () => {
   };
   console.log(posts);
   return (
-    <div className="font-english w-11/12 mx-auto lg:container mb-5">
-      <h1 className="text-3xl pb-4 text-blue-950 font-bold">Blogs</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
-        {posts.map((post) => (
-          <div key={post.id} className="relative lg:h-60">
-            <div className="absolute bg-gradient-to-b from-slate-700/10 to-slate-900 flex lg:h-60 h-full w-full items-end bottom-0 font-extrabold text-lg px-2 py-3 text-center leading-tight text-white">
-              <p>{post.title}</p>
-            </div>
-            <div className=""></div>
-            <img
-              src={post.cover_image}
-              alt=""
-              className="lg:h-60 w-full object-cover"
-            />
-            {/* <p>{post.description}</p> */}
+    <section className="font-english bg-lightblue">
+      <div className="py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
+        <TitleOne title={"Author's Blog"} />
+        <section className="flex items-center justify-center">
+          <div className="flex gap-2 bg-primary">
+            {posts.slice(4, 7).map((post) => (
+              <div key={post.id} className="w-[20rem] bg-white flex flex-col">
+                <img
+                  unoptimized={true}
+                  src={post.cover_image}
+                  alt=""
+                  className="w-[20rem] h-60 object-cover"
+                />
+
+                <div className="px-8 py-7 flex flex-col flex-1">
+                  <p className="mb-3 text-2xl h-[3.9rem] text-deepblue font-bold overflow-clip">
+                    {post.title}
+                  </p>
+                  <p className="font-inter text-gray-500 flex-1">
+                    {post.description}
+                  </p>
+                  <div className="flex mt-4 justify-between">
+                    <Link
+                      className="border-b-2 border-deepblue text-deepblue font-bold font-bangla"
+                      href={"/"}
+                    >
+                      আরও পড়ুন
+                    </Link>
+                    <p className="font-bangla text-sm">
+                      {post?.user?.name.split(" ")[0]} -{" "}
+                      <span className="font-['kalpurush']">
+                        {formatDate(post.created_at)}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </section>
       </div>
-    </div>
+    </section>
   );
 };
 
