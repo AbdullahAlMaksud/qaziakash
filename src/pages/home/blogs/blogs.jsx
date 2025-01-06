@@ -35,9 +35,12 @@ const Blogs = () => {
       <div className="py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
         <TitleOne title={"Author's Blog"} />
         <section className="flex items-center justify-center">
-          <div className="flex gap-2 bg-primary">
+          <div className="flex gap-2">
             {posts.slice(4, 7).map((post) => (
-              <div key={post.id} className="w-[20rem] bg-white flex flex-col">
+              <div
+                key={post.id}
+                className="w-[20rem] bg-white flex flex-col hover:shadow-sm"
+              >
                 <img
                   unoptimized={true}
                   src={post.cover_image}
