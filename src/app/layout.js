@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
+import { Toaster } from "@/components/ui/toaster";
 import { Cardo, Inter, Tiro_Bangla } from "next/font/google";
 import "./globals.css";
 
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         <section>
           <Footer />
         </section>
+        <Toaster />
       </body>
     </html>
   );
