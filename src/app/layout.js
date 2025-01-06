@@ -1,10 +1,11 @@
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
-import { Roboto_Condensed, Tiro_Bangla } from "next/font/google";
+import { Cardo, Tiro_Bangla } from "next/font/google";
 import "./globals.css";
 
-export const inter = Roboto_Condensed({
+export const cardo = Cardo({
   variable: "--font-english",
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -23,9 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${tiroBangla.variable} bg-blue-100/50`}
-      >
+      <body className={`${cardo.variable} ${tiroBangla.variable}`}>
         <nav>
           <Navbar />
         </nav>
