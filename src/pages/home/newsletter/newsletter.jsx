@@ -3,19 +3,27 @@ import { Input } from "@/components/ui/input";
 
 const Newsletter = () => {
   return (
-    <section className="bg-blue-700 text-white  font-english">
-      <div className="w-11/12 mx-auto md:container py-5 flex lg:items-center flex-col lg:flex-row gap-2">
-        <h2 className="text-xl px-3 text-center lg:px-20 font-bold font-bangla">
-          নতুন বই বা লেখার খবর পেতে ইমেইল দিয়ে{" "}
-          <span className="text-primary">সাবস্ক্রাইব</span> করুন!
-        </h2>
+    <section className="font-english">
+      <div className="w-9/12 bg-primary my-16 py-28 mx-auto flex lg:items-center flex-col gap-2">
+        <div className="flex flex-col items-center">
+          <h2 className="mb-4 text-5xl font-bold text-blue-950">
+            Read a free chapter
+          </h2>
+          <hr className="w-10 h-0.5 bg-deepblue mb-2" />
+          <p className="w-2/3 text-center text-gray-600 font-inter text-sm">
+            Making this the first true value generator on the Internet. It of
+            over 200 Latin words, combined with a handful.
+          </p>
+        </div>
 
-        <div className="flex lg:flex-1 lg:flex-row lg:gap-2 flex-col border border-primary lg:border-0 rounded-b rounded-t">
+        <div className="flex items-center gap-2 mt-10">
           <Input
-            className="bg-white rounded-b-none placeholder:font-english shadow-none"
+            className="bg-white rounded-none px-4 py-5 w-80 placeholder:font-english shadow-none"
             placeholder="Enter your email"
           />
-          <Button className="rounded-t-none">Subscribe</Button>
+          <Button className="rounded-none px-20 py-5 bg-deepblue text-white hover:bg-primary-foreground">
+            Subscribe
+          </Button>
         </div>
       </div>
     </section>
