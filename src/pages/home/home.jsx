@@ -4,6 +4,7 @@ import BannerAd from "./bannerAd/bannerAd";
 import Blogs from "./blogs/blogs";
 import Books from "./books/books";
 import Newsletter from "./newsletter/newsletter";
+import Publishers from "./publishers/publishers";
 
 const HomePage = () => {
   return (
@@ -11,7 +12,8 @@ const HomePage = () => {
       <Banner />
       <Author />
       <Books />
-      <BannerAd/>
+      <BannerAd />
+      <Publishers />
       <Blogs />
       <Newsletter />
     </section>
