@@ -38,7 +38,7 @@ const Banner = () => {
   return (
     <section
       className="w-full
-    bg-gradient-to-t from-[#031535] to-[#2a559d] pt-16 rounded-b-sm"
+    bg-gradient-to-t from-[#031535] -mt-16 to-[#2a559d] pt-32 rounded-b-sm"
     >
       <Swiper
         slidesPerView={1}
