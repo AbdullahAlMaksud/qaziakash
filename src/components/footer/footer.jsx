@@ -26,8 +26,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-deepblue dark:bg-gray-900 text-white">
-      <div className="w-9/12 container mx-auto py-10 flex justify-between">
-        <div className="flex flex-col">
+      <div className="w-9/12 container mx-auto py-10 flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col  lg:items-start">
           <Link href="/" className="flex items-center gap-2">
             <Image
               height={100}
@@ -61,36 +61,39 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
-          <h2 className="font-english text- text-xl font-bold pb-2">Explore</h2>
-          <ul className="text-sm font-inter">
-            <li>
-              <Link href={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link href={"/"}>About</Link>
-            </li>
-            <li>
-              <Link href={"/"}>Books</Link>
-            </li>
-            <li>
-              <Link href={"/"}>Blogs</Link>
-            </li>
-            <li>
-              <Link href={"/"}>Appointments</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="font-english text- text-xl font-bold pb-2">Books</h2>
-          <ul className="text-sm font-inter">
-            {books?.map((book) => (
-              <li key={book.id}>
-                <Link href={`/books/${book.id}`}>{book.title}</Link>
+        <div className="flex flex-row justify-between my-4 lg:gap-10 lg:mt-0">
+          <div className="">
+            <h2 className="font-english text- text-xl font-bold pb-2">Pages</h2>
+            <ul className="text-sm font-inter">
+              <li>
+                <Link href={"/"}>Home</Link>
               </li>
-            ))}
-          </ul>
+              <li>
+                <Link href={"/"}>About</Link>
+              </li>
+              <li>
+                <Link href={"/"}>Books</Link>
+              </li>
+              <li>
+                <Link href={"/"}>Blogs</Link>
+              </li>
+              <li>
+                <Link href={"/"}>Appointments</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-english text- text-xl font-bold pb-2">Books</h2>
+            <ul className="text-sm font-inter">
+              {books?.map((book) => (
+                <li key={book.id}>
+                  <Link href={`/books/${book.id}`}>{book.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
+
         <div>
           <h2 className="font-english text- text-xl font-bold pb-2">
             Send a Massages
@@ -98,14 +101,14 @@ const Footer = () => {
 
           <div>
             <form className="space-y-2 flex flex-col">
-              <div className="flex gap-2 flex-row">
+              <div className="flex gap-2 flex-col lg:flex-row">
                 <Input
-                  className="bg-white/10 rounded-none px-4 py-1 w-40 placeholder:font-english shadow-none"
+                  className="bg-white/10 rounded-none px-4 py-1 lg:w-40 placeholder:font-english shadow-none"
                   placeholder="Name"
                   required
                 />
                 <Input
-                  className="bg-white/10 rounded-none px-4 py-1 w-60 placeholder:font-english shadow-none"
+                  className="bg-white/10 rounded-none px-4 py-1 lg:w-60 placeholder:font-english shadow-none"
                   placeholder="Email"
                   required
                 />

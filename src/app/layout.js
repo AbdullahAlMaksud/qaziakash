@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable}`}
+        className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable} max-w-screen-2xl mx-auto`}
       >
         <nav>
           <Navbar />

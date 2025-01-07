@@ -4,7 +4,7 @@ import Image from "next/image";
 const BannerAd = () => {
   return (
     <section className="bg-deepblue  py-20">
-      <div className="w-10/12 lg:container mx-auto flex text-white items-center gap-5 px-20">
+      <div className="w-10/12 lg:container mx-auto flex flex-col-reverse lg:flex-row text-white justify-center lg:justify-normal items-center gap-5 lg:px-20">
         <div className="">
           <h2 className="mb-4 text-5xl uppercase font-english font-bold ">
             Get your copy today
@@ -20,7 +20,7 @@ const BannerAd = () => {
         </div>
         <Image
           unoptimized
-          src={"/book&tea.png"}
+          src={"/images/book&tea.png"}
           className="w-[35rem] h-full"
           alt="m"
           width={100}

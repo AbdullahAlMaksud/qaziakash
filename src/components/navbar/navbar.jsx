@@ -30,8 +30,8 @@ const Navbar = () => {
   const getNavbarClass = () => {
     if (path === "/") {
       return scrolled
-        ? "bg-black/20 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 w-11/12 fixed left-1/2 -translate-x-1/2 top-0"
-        : "bg-transparent w-full fixed";
+        ? "bg-black/20 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 max-w-screen-2xl w-11/12 fixed left-1/2 -translate-x-1/2 top-0"
+        : "bg-transparent max-w-screen-2xl w-full fixed left-1/2 -translate-x-1/2 top-0";
     }
     return `${
       pathColors.get(path) || "bg-blue-700"

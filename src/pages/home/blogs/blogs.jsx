@@ -32,17 +32,17 @@ const Blogs = () => {
   console.log(posts);
   return (
     <section className="font-english bg-lightblue">
-      <div className="py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
+      <div className="py-8 lg:py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
         <TitleOne title={"Author's Blog"} />
-        <section className="flex items-center justify-center">
-          <div className="flex gap-2">
+        <section className="flex  items-center justify-center">
+          <div className="flex flex-col lg:flex-row gap-2">
             {posts.slice(4, 7).map((post) => (
               <div
                 key={post.id}
                 className="w-[20rem] bg-white flex flex-col hover:shadow-sm"
               >
                 <img
-                  unoptimized={true}
+                  unoptimized
                   src={post.cover_image}
                   alt=""
                   className="w-[20rem] h-60 object-cover"

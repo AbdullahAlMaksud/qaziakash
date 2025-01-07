@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Author = () => {
   return (
-    <section className="font-bangla w-11/12 mx-auto lg:container lg:flex lg:justify-between lg:items-center lg:gap-20 py-32">
+    <section className="font-bangla w-11/12 mx-auto lg:container lg:flex lg:justify-between lg:items-center lg:gap-20 py-8 lg:py-32">
       <div className="flex items-center justify-center">
         <div className="relative">
           <Image
