@@ -19,7 +19,7 @@ const BannerAd = () => {
           </Button>
         </div>
         <Image
-          unoptimized
+          unoptimized="true"
           src={"/images/book&tea.png"}
           className="w-[35rem] h-full"
           alt="m"

@@ -3,8 +3,8 @@ import { Input } from "@/components/ui/input";
 
 const Newsletter = () => {
   return (
-    <section className="font-english">
-      <div className=" py-8 w-11/12 my-8 lg:w-9/12 bg-primary lg:my-16 lg:py-28 px-4 lg:px-0 mx-auto flex lg:items-center flex-col gap-2">
+    <section className="font-english bg-lightblue py-8">
+      <div className=" py-8 w-11/12 lg:w-9/12 bg-primary lg:my-16 lg:py-28 px-4 lg:px-0 mx-auto flex lg:items-center flex-col gap-2">
         <div className="flex flex-col items-center">
           <h2 className="mb-4 text-5xl text-center font-bold text-blue-950">
             Read a free chapter

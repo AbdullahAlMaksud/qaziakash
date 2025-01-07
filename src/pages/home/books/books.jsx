@@ -22,11 +22,11 @@ const Books = () => {
 
         {/* Books Gallery */}
         <div className="flex flex-col lg:flex-row font-bangla gap-2">
-          {books.map((book) => (
+          {books.slice(3).map((book) => (
             <div key={book.id} className="flex gap-4">
               <div>
                 <Image
-                  unoptimized
+                  unoptimized="true"
                   width={100}
                   height={100}
                   className="w-40 lg:min-w-52 lg:min-h-72 object-cover"

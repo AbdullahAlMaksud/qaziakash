@@ -42,7 +42,6 @@ const Blogs = () => {
                 className="w-[20rem] bg-white flex flex-col hover:shadow-sm"
               >
                 <img
-                  unoptimized
                   src={post.cover_image}
                   alt=""
                   className="w-[20rem] h-60 object-cover"

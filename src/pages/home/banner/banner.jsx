@@ -58,7 +58,7 @@ const Banner = () => {
           <SwiperSlide key={book.id}>
             <section
               key={book.id}
-              className="w-11/12 lg:container mx-auto flex py-10 items-center lg:items-start justify-between"
+              className="w-10/12  mx-auto flex py-10 items-center lg:items-start justify-between"
             >
               <div className="flex items-center justify-between lg:items-start flex-col-reverse md:flex-row gap-2 w-full">
                 <div className="text-white w-full md:w-1/2 flex flex-col items-center md:items-start">
@@ -101,7 +101,7 @@ const Banner = () => {
                 </div>
                 <div>
                   <Image
-                    unoptimized
+                    unoptimized="true"
                     src={book?.cover}
                     alt={book.title}
                     height={100}
