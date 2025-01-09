@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { Cardo, Inter, Tiro_Bangla } from "next/font/google";
 import "./globals.css";
+import QueryProvider from "./provider/QueryProvider";
 
 export const cardo = Cardo({
   variable: "--font-english",
@@ -35,14 +36,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable} max-w-screen-2xl mx-auto`}
       >
-        <nav>
-          <Navbar />
-        </nav>
-        <main>{children}</main>
-        <section>
-          <Footer />
-        </section>
-        <Toaster />
+        <QueryProvider>
+          <nav>
+            <Navbar />
+          </nav>
+          <main>{children}</main>
+          <section>
+            <Footer />
+          </section>
+          <Toaster />
+        </QueryProvider>
       </body>
     </html>
   );
