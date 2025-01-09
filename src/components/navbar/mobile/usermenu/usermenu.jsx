@@ -52,7 +52,7 @@ const Usermenu = () => {
               </Link>
 
               <Link
-                href={"/blog"}
+                href={"/blogs"}
                 className={
                   path === "/blogs"
                     ? "bg-secondary flex rounded px-2 py-2 text-primary"

@@ -13,7 +13,7 @@ const Banner = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/BookShortInfo.json")
+    fetch("/data/BooksData.json")
       .then((res) => res.json())
       .then((data) => {
         setBookShortInfo(data);
