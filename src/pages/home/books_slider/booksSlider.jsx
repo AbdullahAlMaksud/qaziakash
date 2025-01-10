@@ -2,7 +2,8 @@
 import BooksCard from "@/components/shared/booksCard/booksCard";
 import TitleOne from "@/components/shared/titleOne/titleOne";
 import { Button } from "@/components/ui/button";
-import { useBooks } from "@/services/booksData";
+import { useBooks } from "@/hooks/use-queries";
+// import { useBooks } from "@/hooks/services/booksData";
 import { useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "swiper/css";
@@ -12,7 +13,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const BooksSlider = () => {
-  const { books } = useBooks();
+  const { data: books } = useBooks();
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
@@ -51,7 +52,7 @@ const BooksSlider = () => {
           }}
         >
           <div>
-            {books.map((book) => (
+            {books?.map((book) => (
               <SwiperSlide key={book.id}>
                 <BooksCard book={book} />
               </SwiperSlide>

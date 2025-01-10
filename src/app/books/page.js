@@ -1,10 +1,10 @@
 "use client";
 import BooksCard from "@/components/shared/booksCard/booksCard";
+import { useBooks } from "@/hooks/use-queries";
 import Newsletter from "@/pages/home/newsletter/newsletter";
-import { useBooks } from "@/services/booksData";
 
-const page = () => {
-  const { books } = useBooks();
+const Books = () => {
+  const { data: books } = useBooks();
   return (
     <section className="-mt-16">
       <div className="flex bg-deepblue pt-32 pb-16 flex-col items-center font-english text-white">
@@ -15,7 +15,7 @@ const page = () => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-4 w-11/12 lg:w-8/12 lg:mt-32 mx-auto">
-        {books.map((book) => (
+        {books?.map((book) => (
           <div key={book.id} className="w-72 lg:w-60">
             <BooksCard book={book} />
           </div>
@@ -27,4 +27,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Books;

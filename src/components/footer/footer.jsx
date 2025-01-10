@@ -1,6 +1,6 @@
 "use client";
+import { useBooks } from "@/hooks/use-queries";
 import { useToast } from "@/hooks/use-toast";
-import { useBooks } from "@/services/booksData";
 import Image from "next/image";
 import Link from "next/link";
 import {

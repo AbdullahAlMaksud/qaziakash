@@ -1,13 +1,14 @@
 "use client";
 import TitleOne from "@/components/shared/titleOne/titleOne";
 import { Button } from "@/components/ui/button";
-import { useBooks } from "@/services/booksData";
+import { useBooks } from "@/hooks/use-queries";
+// import { useBooks } from "@/hooks/services/booksData";
 import Image from "next/image";
 import { useState } from "react";
 
 const Books = () => {
   const [grid, setGrid] = useState(true);
-  const { books } = useBooks();
+  const { data: books } = useBooks();
   console.log(books);
 
   const handleGrid = () => {
@@ -22,7 +23,7 @@ const Books = () => {
 
         {/* Books Gallery */}
         <div className="flex flex-col lg:flex-row font-bangla gap-2">
-          {books.slice(3).map((book) => (
+          {books?.slice(3).map((book) => (
             <div key={book.id} className="flex gap-4">
               <div>
                 <Image
@@ -40,10 +41,10 @@ const Books = () => {
                   {book.title}
                 </h2>
                 <p className="pt-2 lg:hidden text-gray-500 text-sm">
-                  {book.description.split(" ").slice(0, 5).join(" ")}...
+                  {book.description.split(" ")?.slice(0, 5).join(" ")}...
                 </p>
                 <p className="hidden lg:block pt-2 text-gray-500 text-sm">
-                  {book.description.split(" ").slice(0, 18).join(" ")}...
+                  {book.description.split(" ")?.slice(0, 18).join(" ")}...
                 </p>
                 <div className="pt-4  flex gap-8">
                   <div className="flex items-start gap-2">
