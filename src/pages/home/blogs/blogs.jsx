@@ -21,7 +21,7 @@ const Blogs = () => {
         <TitleOne title={"Author's Blog"} />
         <section className="flex  items-center justify-center">
           <div className="flex flex-col lg:flex-row gap-2">
-            {posts.slice(3).map((post) => (
+            {posts?.slice(3).map((post) => (
               <div
                 key={post.id}
                 className="w-[20rem] bg-white flex flex-col hover:shadow-sm"

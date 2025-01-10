@@ -45,7 +45,7 @@ const Blogs = () => {
                   {post.title}
                 </p>
                 <p className="font-inter text-gray-500 flex-1">
-                  {post.excerpt.slice(0, 100)}...
+                  {post?.excerpt?.slice(0, 100)}...
                 </p>
                 <div className="flex mt-4 justify-between">
                   <Link

@@ -1,0 +1,99 @@
+{
+    "users": [
+      {
+        "id": "u1",
+        "username": "reader123",
+        "email": "reader@example.com",
+        "password": "hashedPassword123",
+        "firstName": "John",
+        "lastName": "Doe",
+        "avatar": "/images/avatars/default.jpg",
+        "joinDate": "2024-01-15",
+        "role": "user",
+        "phoneNumber": "+880123456789",
+        "address": {
+          "street": "123 Reader Lane",
+          "city": "Dhaka",
+          "country": "Bangladesh",
+          "postalCode": "1000"
+        },
+        "purchasedBooks": [
+          {
+            "bookId": "b1",
+            "purchaseDate": "2024-01-20",
+            "price": 299,
+            "status": "delivered"
+          }
+        ],
+        "bookComments": [
+          {
+            "bookId": "b1",
+            "comment": "This book changed my perspective on life!",
+            "date": "2024-01-25",
+            "likes": 5
+          }
+        ],
+        "bookRatings": [
+          {
+            "bookId": "b1",
+            "rating": 4.5,
+            "date": "2024-01-25"
+          }
+        ],
+        "wishlist": ["b2", "b3"],
+        "preferences": {
+          "language": "bengali",
+          "genres": ["fiction", "poetry"],
+          "newsletter": true
+        }
+      },
+      {
+        "id": "u2",
+        "username": "bookworm456",
+        "email": "bookworm@example.com",
+        "password": "hashedPassword456",
+        "firstName": "Sarah",
+        "lastName": "Khan",
+        "avatar": "/images/avatars/sarah.jpg",
+        "joinDate": "2024-01-10",
+        "role": "user",
+        "phoneNumber": "+880987654321",
+        "address": {
+          "street": "456 Book Street",
+          "city": "Chittagong",
+          "country": "Bangladesh",
+          "postalCode": "4000"
+        },
+        "purchasedBooks": [
+          {
+            "bookId": "b2",
+            "purchaseDate": "2024-01-22",
+            "price": 349,
+            "status": "processing"
+          }
+        ],
+        "bookComments": [
+          {
+            "bookId": "b2",
+            "comment": "Beautiful storytelling and amazing character development!",
+            "date": "2024-01-26",
+            "likes": 3
+          }
+        ],
+        "bookRatings": [
+          {
+            "bookId": "b2",
+            "rating": 5,
+            "date": "2024-01-26"
+          }
+        ],
+        "wishlist": ["b1", "b4"],
+        "preferences": {
+          "language": "english",
+          "genres": ["drama", "mystery"],
+          "newsletter": true
+        }
+      }
+    ]
+  }
+  

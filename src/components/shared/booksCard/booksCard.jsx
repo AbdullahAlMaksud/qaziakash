@@ -27,7 +27,7 @@ const BooksCard = ({ book }) => {
           </p>
         </div>
         <p className="pb-2 text-sm text-gray-500">
-          {book.description.split(" ").slice(0, 9).join(" ")}...
+          {book.description.split(" ")?.slice(0, 9).join(" ")}...
         </p>
         <div className="flex items-center gap-2 mb-5">
           <FaCircle className="text-primary" />
