@@ -13,7 +13,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
 const Footer = () => {
-  const { books } = useBooks();
+  const { data: books } = useBooks();
   const { toast } = useToast();
 
   const handleSubmit = (e) => {

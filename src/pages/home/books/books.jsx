@@ -1,9 +1,9 @@
 "use client";
 import TitleOne from "@/components/shared/titleOne/titleOne";
-import { Button } from "@/components/ui/button";
 import { useBooks } from "@/hooks/use-queries";
 // import { useBooks } from "@/hooks/services/booksData";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Books = () => {
@@ -71,9 +71,12 @@ const Books = () => {
                   </div>
                 </div>
 
-                <Button className="border bg-transparent shadow-none border-primary py-5 w-fit px-7 rounded-none mt-4">
+                <Link
+                  href={`/books/${book.id}`}
+                  className="border bg-transparent shadow-none border-primary py-5 w-fit px-7 rounded-none mt-4"
+                >
                   বিস্তারিত দেখুন
-                </Button>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,4 +1,9 @@
-import { fetchAuthor, fetchBlogsPosts, fetchBooks } from "@/lib/api-functions";
+import {
+  fetchAuthor,
+  fetchBlogsPosts,
+  fetchBooks,
+  fetchSingleBook,
+} from "@/lib/api-functions";
 import { useQuery } from "@tanstack/react-query";
 
 export const useBooks = () => {
@@ -20,6 +25,14 @@ export const useAuthor = () => {
   return useQuery({
     queryKey: ["author"],
     queryFn: fetchAuthor,
+    staleTime: 5 * 60 * 1000,
+  });
+};
+
+export const useBook = (id) => {
+  return useQuery({
+    queryKey: ["book", id],
+    queryFn: () => fetchSingleBook(id),
     staleTime: 5 * 60 * 1000,
   });
 };

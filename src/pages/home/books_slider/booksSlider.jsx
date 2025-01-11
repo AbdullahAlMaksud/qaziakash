@@ -37,9 +37,6 @@ const BooksSlider = () => {
               spaceBetween: 30,
             },
           }}
-          pagination={{
-            clickable: true,
-          }}
           navigation={{
             prevEl: ".swiper-button-prev-custom",
             nextEl: ".swiper-button-next-custom",

@@ -13,3 +13,8 @@ export const fetchAuthor = async () => {
   const { data } = await axiosInstance.get("/AuthorData.json");
   return data;
 };
+
+export const fetchSingleBook = async (id) => {
+  const { data } = await axiosInstance.get("/BooksData.json");
+  return data.find(book => book.id === id);
+};
