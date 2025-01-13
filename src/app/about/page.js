@@ -26,7 +26,7 @@ const page = () => {
             alt="Qazi Akash"
             width={100}
             height={100}
-            className="w-11/12 max-h-[40rem] object-top mb-10 object-cover mx-auto shadow-xl shadow-black"
+            className="w-full max-h-[40rem] object-top mb-10 object-cover mx-auto shadow-md rounded"
           />
 
           <div className="flex gap-20">
@@ -69,6 +69,8 @@ const page = () => {
             </div>
           </div>
         </div>
+
+        <div className="mt-20"></div>
       </section>
     </section>
   );

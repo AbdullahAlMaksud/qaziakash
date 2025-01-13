@@ -32,21 +32,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable} max-w-screen-2xl mx-auto`}
-      >
-        <QueryProvider>
-          <nav>
+    <html lang="en" className="scroll-smooth focus:scroll-auto">
+      <QueryProvider>
+        <body
+          className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable} max-w-screen-2xl mx-auto scroll-smooth hover:scroll-auto`}
+        >
+          <div className="flex flex-col overflow-x-clip">
             <Navbar />
-          </nav>
-          <main>{children}</main>
-          <section>
+            <main className="flex flex-grow flex-col">{children}</main>
             <Footer />
-          </section>
+          </div>
           <Toaster />
-        </QueryProvider>
-      </body>
+        </body>
+      </QueryProvider>
     </html>
   );
 }
