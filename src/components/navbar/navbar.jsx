@@ -28,19 +28,14 @@ const Navbar = () => {
   }, []);
 
   const getNavbarClass = () => {
-    if (path === "/") {
-      return scrolled
-        ? "bg-black/20 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 max-w-screen-2xl w-11/12 fixed left-1/2 -translate-x-1/2 top-0"
-        : "bg-transparent max-w-screen-2xl w-full fixed left-1/2 -translate-x-1/2 top-0";
-    }
-    return `${
-      pathColors.get(path) || "bg-blue-700"
-    } transition-colors duration-300`;
+    return scrolled
+      ? "bg-black/20 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 px-1 max-w-7xl mx-auto"
+      : "bg-transparent max-w-screen-2xl w-full";
   };
 
   return (
-    <section
-      className={`${getNavbarClass()} min-h-14 max-h-14 z-50 flex items-center`}
+    <nav
+      className={`sticky top-0 left-0 z-50 w-full text-white py-3 ${getNavbarClass()}`}
     >
       <section className="md:container w-11/12 mx-auto px-2 flex items-center justify-between">
         {/* Logo */}
@@ -100,7 +95,7 @@ const Navbar = () => {
         </section>
         {/* Navmenu */}
       </section>
-    </section>
+    </nav>
   );
 };
 

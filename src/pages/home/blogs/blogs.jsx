@@ -1,13 +1,10 @@
 "use client";
 import TitleOne from "@/components/shared/titleOne/titleOne";
+import { useBlogs } from "@/hooks/use-queries";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 const Blogs = () => {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    getPosts();
-  }, []);
+  const { data: posts, isFetching, error } = useBlogs();
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -18,31 +15,19 @@ const Blogs = () => {
     });
   };
 
-  const getPosts = async () => {
-    try {
-      const response = await fetch(
-        "https://dev.to/api/articles?username=tiaeastwood&per_page=8"
-      );
-      const json = await response.json();
-      setPosts(json);
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
-  console.log(posts);
   return (
     <section className="font-english bg-lightblue">
       <div className="py-8 lg:py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
         <TitleOne title={"Author's Blog"} />
         <section className="flex  items-center justify-center">
           <div className="flex flex-col lg:flex-row gap-2">
-            {posts.slice(4, 7).map((post) => (
+            {posts?.slice(3)?.map((post) => (
               <div
                 key={post.id}
                 className="w-[20rem] bg-white flex flex-col hover:shadow-sm"
               >
                 <img
-                  src={post.cover_image}
+                  src={post.coverImage}
                   alt=""
                   className="w-[20rem] h-60 object-cover"
                 />
@@ -52,7 +37,7 @@ const Blogs = () => {
                     {post.title}
                   </p>
                   <p className="font-inter text-gray-500 flex-1">
-                    {post.description}
+                    {post.excerpt?.slice(0, 100)}...
                   </p>
                   <div className="flex mt-4 justify-between">
                     <Link
@@ -62,9 +47,9 @@ const Blogs = () => {
                       আরও পড়ুন
                     </Link>
                     <p className="font-bangla text-sm">
-                      {post?.user?.name.split(" ")[0]} -{" "}
+                      {post?.author} -{" "}
                       <span className="font-['kalpurush']">
-                        {formatDate(post.created_at)}
+                        {formatDate(post.publishDate)}
                       </span>
                     </p>
                   </div>

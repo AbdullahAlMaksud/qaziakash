@@ -1,6 +1,6 @@
 "use client";
+import { useBooks } from "@/hooks/use-queries";
 import { useToast } from "@/hooks/use-toast";
-import { useBooks } from "@/services/booksData";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +13,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
 const Footer = () => {
-  const { books } = useBooks();
+  const { data: books } = useBooks();
   const { toast } = useToast();
 
   const handleSubmit = (e) => {

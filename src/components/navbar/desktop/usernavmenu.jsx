@@ -35,7 +35,7 @@ const UserNavMenu = () => {
       </li>
       <li>
         <Link
-          href={"/blog"}
+          href={"/blogs"}
           className={
             path === "/blogs"
               ? "border-b border-primary px-2 py-2 text-primary"

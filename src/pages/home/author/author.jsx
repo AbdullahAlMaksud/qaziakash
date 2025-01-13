@@ -1,6 +1,21 @@
+"use client";
+
+import { useAuthor } from "@/hooks/use-queries";
 import Image from "next/image";
 
 const Author = () => {
+  const { data: author, isFetching, error } = useAuthor();
+  console.log(author);
+
+  isFetching && <div>Loading...</div>;
+
+  // const authorData = author[0];
+
+  // const { description, email, name, phone, photo, publishedBook, qrcodeURL } =
+  //   author[0];
+
+  console.log(author);
+
   return (
     <section className="font-bangla w-11/12 mx-auto lg:container lg:flex lg:justify-between lg:items-center lg:gap-20 py-8 lg:py-32">
       <div className="flex items-center justify-center">
@@ -17,7 +32,7 @@ const Author = () => {
         </div>
       </div>
       <div className="mt-8 lg:mt-0 lg:w-2/3">
-        <h2 className="text-3xl text-blue-950 font-bold">কাজী আকাশ</h2>
+        <h2 className="text-3xl text-blue-950 font-bold"></h2>
         <hr className="bg-primary h-0.5 w-14" />
         <p className="text-justify pt-3 text-lg">
           জন্ম গোপালগঞ্জের কোটালীপাড়া উপজেলার মান্দ্রা গ্রামে। পড়ালেখা গণিতে।
