@@ -1,14 +1,14 @@
 "use client";
 import TitleOne from "@/components/shared/titleOne/titleOne";
-import { useBooks } from "@/hooks/use-queries";
+import { useFetch } from "@/hooks/useFetch";
 // import { useBooks } from "@/hooks/services/booksData";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 const Books = () => {
+  const { data: books, loading, error } = useFetch("/data/BooksData.json");
   const [grid, setGrid] = useState(true);
-  const { data: books } = useBooks();
   console.log(books);
 
   const handleGrid = () => {

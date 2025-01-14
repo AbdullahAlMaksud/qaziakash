@@ -1,18 +1,11 @@
 "use client";
 
-import { useAuthor } from "@/hooks/use-queries";
+import { useFetch } from "@/hooks/useFetch";
 import Image from "next/image";
 
 const Author = () => {
-  const { data: author, isFetching, error } = useAuthor();
+  const { data: author, loading, error } = useFetch("/data/AuthorData.json");
   console.log(author);
-
-  isFetching && <div>Loading...</div>;
-
-  // const authorData = author[0];
-
-  // const { description, email, name, phone, photo, publishedBook, qrcodeURL } =
-  //   author[0];
 
   console.log(author);
 

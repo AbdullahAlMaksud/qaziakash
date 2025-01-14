@@ -2,7 +2,7 @@
 import BooksCard from "@/components/shared/booksCard/booksCard";
 import TitleOne from "@/components/shared/titleOne/titleOne";
 import { Button } from "@/components/ui/button";
-import { useBooks } from "@/hooks/use-queries";
+import { useFetch } from "@/hooks/useFetch";
 // import { useBooks } from "@/hooks/services/booksData";
 import { useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
@@ -13,7 +13,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const BooksSlider = () => {
-  const { data: books } = useBooks();
+  const { data: books, loading, error } = useFetch("/data/BooksData.json");
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 

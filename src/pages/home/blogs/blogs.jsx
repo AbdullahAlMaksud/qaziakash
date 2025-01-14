@@ -1,10 +1,10 @@
 "use client";
 import TitleOne from "@/components/shared/titleOne/titleOne";
-import { useBlogs } from "@/hooks/use-queries";
+import { useFetch } from "@/hooks/useFetch";
 import Link from "next/link";
 
 const Blogs = () => {
-  const { data: posts, isFetching, error } = useBlogs();
+  const { data: posts, loading, error } = useFetch("/data/BlogsData.json");
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);

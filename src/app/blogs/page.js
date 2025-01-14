@@ -1,10 +1,10 @@
 "use client";
-import { useBlogs } from "@/hooks/use-queries";
+import { fetchBlogsPosts } from "@/lib/api-functions";
 import Image from "next/image";
 import Link from "next/link";
 
 const Blogs = () => {
-  const { data: posts, isLoading, error } = useBlogs();
+
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);

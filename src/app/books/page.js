@@ -1,10 +1,10 @@
 "use client";
 import BooksCard from "@/components/shared/booksCard/booksCard";
-import { useBooks } from "@/hooks/use-queries";
+import { useFetch } from "@/hooks/useFetch";
 import Newsletter from "@/pages/home/newsletter/newsletter";
 
 const Books = () => {
-  const { data: books } = useBooks();
+  const { data: books, loading, error } = useFetch("/data/BooksData.json");
   return (
     <section className="-mt-16">
       <div className="bg-deepblue py-32 text-white">
