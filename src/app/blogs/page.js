@@ -1,11 +1,11 @@
 "use client";
-import { fetchBlogsPosts } from "@/lib/api-functions";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 const Blogs = () => {
 
-
+  const { data: books, loading, error } = useFetch("/data/BlogsData.json");
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-GB", {
