@@ -1,11 +1,10 @@
 "use client";
+import { useFetch } from "@/hooks/useFetch";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
 const Blogs = () => {
-
-  const { data: books, loading, error } = useFetch("/data/BlogsData.json");
+  const { data: posts, loading, error } = useFetch("/data/BlogsData.json");
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-GB", {
@@ -57,7 +56,7 @@ const Blogs = () => {
                 <div className="flex mt-4 justify-between">
                   <Link
                     className="border-b-2 border-deepblue text-deepblue font-bold font-bangla"
-                    href={"/"}
+                    href={`/blogs/${post.id}`}
                   >
                     আরও পড়ুন
                   </Link>

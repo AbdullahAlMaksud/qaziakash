@@ -1,7 +1,7 @@
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
 import { Toaster } from "@/components/ui/toaster";
-import { Cardo, Inter, Tiro_Bangla } from "next/font/google";
+import { Cardo, Inter, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 
 export const cardo = Cardo({
@@ -18,9 +18,8 @@ export const inter = Inter({
   display: "swap",
 });
 
-export const tiroBangla = Tiro_Bangla({
-  variable: "--font-tiro-bangla",
-  weight: "400",
+export const notoSerifBangla = Noto_Serif_Bengali({
+  variable: "--font-sans-bengali",
   subsets: ["bengali"],
 });
 
@@ -33,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth focus:scroll-auto">
       <body
-        className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable} max-w-screen-2xl mx-auto scroll-smooth hover:scroll-auto`}
+        className={`${cardo.variable} ${inter.variable} ${notoSerifBangla.variable} max-w-screen-2xl mx-auto scroll-smooth hover:scroll-auto`}
       >
         <div className="flex flex-col overflow-x-clip">
           <Navbar />

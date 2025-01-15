@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Button } from "../ui/button";
 import UserNavMenu from "./desktop/usernavmenu";
-import Usermenu from "./mobile/usermenu/usermenu";
+import UserMenu from "./mobile/usermenu/usermenu";
 const pathColors = new Map([
   ["/about", "bg-purple-700"],
   ["/contact", "bg-green-700"],
@@ -29,15 +29,15 @@ const Navbar = () => {
 
   const getNavbarClass = () => {
     return scrolled
-      ? "bg-black/20 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 px-1 max-w-7xl mx-auto"
-      : "bg-transparent max-w-screen-2xl w-full";
+      ? "bg-black/20 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 px-1 lg:py-3 py-2 max-w-80 lg:max-w-7xl mx-auto"
+      : "bg-transparent max-w-screen-2xl py-3 w-full";
   };
 
   return (
     <nav
-      className={`sticky top-0 left-0 z-50 w-full text-white py-3 ${getNavbarClass()}`}
+      className={`sticky top-0 left-0 z-50 w-full text-white  ${getNavbarClass()}`}
     >
-      <section className="md:container w-11/12 mx-auto px-2 flex items-center justify-between">
+      <section className="md:container w-11/12 mx-auto lg:px-2 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 ">
           <Link href="/" className="flex items-center gap-2 ">
@@ -48,13 +48,13 @@ const Navbar = () => {
               alt="icon"
               className="w-7"
             ></Image>
-            <h2 className="font-english text-white font-medium text-xl">
-              Qazi Akash
+            <h2 className="font-bangla text-white font-medium text-xl">
+              কাজী আকাশ
             </h2>
           </Link>
 
           <div>
-            <ul className="hidden lg:flex items-center gap-1">
+            <ul className="hidden">
               <li>
                 <Button
                   className="rounded-none px-2.5 hover:bg-primary bg-white"
@@ -90,8 +90,10 @@ const Navbar = () => {
         {/* Button */}
         <section className="flex items-center gap-1">
           <UserNavMenu />
-          <Button className="font-english rounded-none">Get Started</Button>
-          <Usermenu />
+          <Button className="font-english rounded-none hidden">
+            Get Started
+          </Button>
+          <UserMenu />
         </section>
         {/* Navmenu */}
       </section>
