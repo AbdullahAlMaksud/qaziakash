@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
           <div>
             <h2 className="font-english text- text-xl font-bold pb-2">Books</h2>
-            <ul className="text-sm font-inter">
+            <ul className="text-sm font-bangla">
               {books?.map((book) => (
                 <li key={book.id}>
                   <Link href={`/books/${book.id}`}>{book.title}</Link>

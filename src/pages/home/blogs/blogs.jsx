@@ -16,7 +16,7 @@ const Blogs = () => {
   };
 
   return (
-    <section className="font-english bg-lightblue">
+    <section className="font-bangla bg-lightblue">
       <div className="py-8 lg:py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
         <TitleOne title={"Author's Blog"} />
         <section className="flex  items-center justify-center">
@@ -39,7 +39,7 @@ const Blogs = () => {
                   >
                     {post.title}
                   </Link>
-                  <p className="font-inter text-gray-500 flex-1">
+                  <p className="font-bangla text-gray-500 flex-1">
                     {post.excerpt?.slice(0, 100)}...
                   </p>
                   <div className="flex mt-4 justify-between">

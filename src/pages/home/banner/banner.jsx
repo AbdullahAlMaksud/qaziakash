@@ -1,119 +1,94 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { useFetch } from "@/hooks/useFetch";
+import { Tooltip, TooltipProvider } from "@radix-ui/react-tooltip";
+import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 
 const Banner = () => {
-  const [bookShortInfo, setBookShortInfo] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/data/BooksData.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setBookShortInfo(data);
-        setLoading(false);
-      });
-  }, []);
-  console.log(bookShortInfo.length);
-
-  const getEditionSuffix = (edition) => {
+  const bookClassById = (edition) => {
     switch (edition) {
       case 1:
-        return "প্রথম";
+        return "";
       case 2:
-        return "দ্বিতীয়";
+        return "mt-10";
       case 3:
-        return "তৃতীয়";
+        return "";
+      case 4:
+        return "mt-10";
+      case 5:
+        return "-mt-2";
+      case 6:
+        return "mt-10";
       default:
-        return "প্রথম";
+        return "top-0 left-0";
     }
   };
-
+  const { data: books, loading, error } = useFetch("/data/BooksData.json");
   return (
-    <section
-      className="w-full
-    bg-gradient-to-t from-[#031535] -mt-16 to-[#2a559d] pt-32 rounded-b-sm"
-    >
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          dynamicBullets: true,
-          clickable: true,
-        }}
-        modules={[Pagination, Autoplay]}
-        className="mySwiper"
-      >
-        {bookShortInfo.map((book) => (
-          <SwiperSlide key={book.id}>
-            <section
-              key={book.id}
-              className="w-10/12  mx-auto flex py-10 items-center lg:items-start justify-between"
+    <section className="-mt-16">
+      <div className="bg-gradient-to-t  from-[#031535] to-[#2a559d] min-h-[35rem] flex justify-center gap-20 items-center">
+        {/* Left */}
+
+        <div className="w-1/3 font-bangla flex flex-col">
+          <p className="font-inter text-xs text-gray-400">
+            Science, Math, History, Story Writer
+          </p>
+          <h1 className="text-4xl mt-4 text-white">Qazi Akash</h1>
+          <p className="pt-4 font-inter text-sm text-gray-300">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex
+            deleniti, nostrum doloribus enim rerum suscipit inventore ullam eius
+            adipisci maiores necessitatibus atque laboriosam pariatur hic
+            laudantium iste sequi voluptatum nisi quas mollitia et. Ad vero quis
+            neque fugiat atque expedita est provident labore assumenda maxime?
+            Maxime eos cupiditate perspiciatis repellendus.
+          </p>
+          <div className="mt-8">
+            <Link
+              className="px-10 py-2 font-bold hover:bg-transparent hover:text-primary border border-transparent hover:border-primary bg-primary capitalize flex items-center gap-2 w-fit"
+              href={"/books"}
             >
-              <div className="flex items-center justify-between lg:items-start flex-col-reverse md:flex-row gap-2 w-full">
-                <div className="text-white w-full md:w-1/2 flex flex-col items-center md:items-start">
-                  <h3 className="flex items-center lg:items-start gap-2 font-english font-light">
-                    <hr className="w-8 border border-primary" />{" "}
-                    {book.categories.join(", ")}
-                  </h3>
-                  <h2 className="text-3xl font-bold">{book.title}</h2>
-                  <p className="md:block hidden font-light pt-3 text-center md:text-left">
-                    {book.description}
-                  </p>
+              সব বই
+              <ArrowRightIcon className="size-4" />
+            </Link>
+          </div>
+        </div>
 
-                  <div className="flex items-center font-banglas font-normal pt-5 gap-4">
-                    <Button className="rounded-none">বিস্তারিত দেখুন</Button>
-                    <Button className="bg-transparent hover:bg-transparent text-white shadow-none border-b rounded-none px-0 pb-0.5 h-7">
-                      কিছু অংশ পড়ুন
-                    </Button>
-                  </div>
+        {/* Right */}
 
-                  <div className="mt-4 hidden md:flex items-center gap-6 font-english">
-                    <div className="flex items-start gap-2">
-                      <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
-                      <div className="-mt-1">
-                        <p className="text-lg font-bold">পৃষ্ঠা:</p>
-                        <p className="font-['kalpurush']">
-                          {book.pages} পৃষ্ঠা
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="min-w-4 max-w-min min-h-4 rounded-full bg-primary"></span>
-                      <div className="-mt-1">
-                        <p className="text-lg font-bold">সংস্করণ:</p>
-                        <p className="font-['kalpurush']">
-                          {getEditionSuffix(book.edition)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <Image
-                    unoptimized="true"
-                    src={book?.cover}
-                    alt={book.title}
-                    height={100}
-                    width={100}
-                    className="w-72 h-[26rem] object-cover border-4 border-gray-200"
-                  ></Image>
-                </div>
-              </div>
-            </section>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <div className="min-h-[calc(35rem-128px)] w-[22rem] bg flex items-center justify-center">
+          <div className="relative h-full w-full z-0 flex flex-wrap gap-2 justify-center items-center">
+            <span className="min-h-28 min-w-3 left-14 bg-lightblue absolute -z-10"></span>
+            <span className="min-h-28 min-w-3 right-14 bg-lightblue absolute -z-10"></span>
+            {books?.map((book) => (
+              <Link
+                key={book.id}
+                href={`/books/${book.id}`}
+                className={`${bookClassById(
+                  book.id
+                )} border-4 border-lightblue h-40 w-28 hover:scale-105 duration-200`}
+              >
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Image
+                        src={book.cover}
+                        alt={book.title}
+                        height={100}
+                        width={100}
+                        className="h-[9.5rem] w-28 object-cover"
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>{book.title}</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

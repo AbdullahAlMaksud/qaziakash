@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import { LibraryBig } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -29,7 +29,7 @@ const Navbar = () => {
 
   const getNavbarClass = () => {
     return scrolled
-      ? "bg-black/20 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 px-1 lg:py-3 py-2 max-w-80 lg:max-w-7xl mx-auto"
+      ? "bg-deepblue/70 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 px-1 lg:py-3 py-2 max-w-80 md:max-w-7xl mx-auto"
       : "bg-transparent max-w-screen-2xl py-3 w-full";
   };
 
@@ -37,17 +37,13 @@ const Navbar = () => {
     <nav
       className={`sticky top-0 left-0 z-50 w-full text-white  ${getNavbarClass()}`}
     >
-      <section className="md:container w-11/12 mx-auto lg:px-2 flex items-center justify-between">
+      <section className="md:container w-11/12 mx-auto lg:px-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 ">
           <Link href="/" className="flex items-center gap-2 ">
-            <Image
-              src="/fav-icon.svg"
-              width={40}
-              height={100}
-              alt="icon"
-              className="w-7"
-            ></Image>
+            <p>
+              <LibraryBig className="text-primary size-7" />
+            </p>
             <h2 className="font-bangla text-white font-medium text-xl">
               কাজী আকাশ
             </h2>
