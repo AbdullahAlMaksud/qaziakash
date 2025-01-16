@@ -17,9 +17,9 @@ const Books = () => {
 
   console.log(grid);
   return (
-    <section className="bg-lightblue font-english lg:mt-20 mx-auto">
+    <section className="bg-lightblue font-english mx-auto">
       <section className="py-8 lg:py-32 w-11/12 md:container flex flex-col justify-center items-center mx-auto">
-        <TitleOne title={"Author's Book Included"} />
+        <TitleOne title={"প্রকাশিত নতুন বই"} />
 
         {/* Books Gallery */}
         <div className="flex flex-col lg:flex-row font-bangla gap-2">

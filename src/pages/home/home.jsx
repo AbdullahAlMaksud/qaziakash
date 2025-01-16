@@ -11,12 +11,12 @@ const HomePage = () => {
   return (
     <section>
       <Banner />
-      <Author />
       <Books />
       <BannerAd />
-      <BooksSlider />
       <Blogs />
+      <BooksSlider />
       <Publishers />
+      <Author />
       <Newsletter />
     </section>
   );

@@ -44,7 +44,7 @@ const Navbar = () => {
             <p>
               <LibraryBig className="text-primary size-7" />
             </p>
-            <h2 className="font-bangla text-white font-medium text-xl">
+            <h2 className="font-bangla text-white font-medium text-xl hover:text-black">
               কাজী আকাশ
             </h2>
           </Link>

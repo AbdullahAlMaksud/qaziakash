@@ -20,7 +20,7 @@ const BooksSlider = () => {
   return (
     <section className="mb-10 mt-20">
       <div>
-        <TitleOne title={"All Books"} />
+        <TitleOne title={"লেখকের সব বই"} />
       </div>
 
       <div className="relative w-11/12 mx-auto">
@@ -41,7 +41,7 @@ const BooksSlider = () => {
             prevEl: ".swiper-button-prev-custom",
             nextEl: ".swiper-button-next-custom",
           }}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination, Navigation,]}
           className="mySwiper w-11/12 mx-auto"
           onSlideChange={(swiper) => {
             setIsBeginning(swiper.isBeginning);
