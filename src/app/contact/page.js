@@ -1,9 +1,68 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { FaEdit } from "react-icons/fa";
 import { FaEnvelope, FaPhone, FaUser, FaWhatsapp } from "react-icons/fa6";
+
+const faqData = [
+  {
+    category: "General",
+    questions: [
+      {
+        question: "What is Qaziakash.com?",
+        answer:
+          "Qaziakash.com is a platform dedicated to publishing engaging and well-researched feature articles on science, mathematics, and history.",
+      },
+      {
+        question: "Who writes the articles on this website?",
+        answer:
+          "Our articles are written by experienced feature writers with backgrounds in science, mathematics, and history.",
+      },
+      {
+        question: "Can I submit my own articles?",
+        answer:
+          "Yes! We welcome guest submissions from writers. Check our submission guidelines for more details.",
+      },
+    ],
+  },
+  {
+    category: "Science",
+    questions: [
+      {
+        question: "Are your science articles peer-reviewed?",
+        answer:
+          "While we strive for accuracy and consult reliable sources, our articles are not formally peer-reviewed like academic journals.",
+      },
+      {
+        question: "Do you cover all branches of science?",
+        answer:
+          "Yes! We write about physics, chemistry, biology, astronomy, environmental science, and more.",
+      },
+    ],
+  },
+  {
+    category: "Mathematics",
+    questions: [
+      {
+        question: "Are your math articles suitable for beginners?",
+        answer:
+          "Yes! We write for a broad audience, from beginners to advanced learners.",
+      },
+      {
+        question: "Do you provide math problem-solving guides?",
+        answer:
+          "Yes! Some of our articles include step-by-step solutions to famous mathematical problems.",
+      },
+    ],
+  },
+];
 
 const page = () => {
   return (
@@ -118,6 +177,33 @@ const page = () => {
             </div>
           </form>
         </div>
+      </section>
+
+      <section className="bg-lightblue py-16">
+        <section className="w-11/12 lg:container mx-auto">
+          <h3 className="text-3xl font-bold text-center">
+            Frequently Asked Questions
+          </h3>
+          <hr className="w-14 h-0.5 bg-primary my-4 mx-auto" />
+
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full grid grid-cols-2 gap-4"
+          >
+            {faqData.flatMap((category, catIndex) =>
+              category.questions.map((faq, index) => (
+                <AccordionItem
+                  key={`${catIndex}-${index}`}
+                  value={`item-${catIndex}-${index}`}
+                >
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))
+            )}
+          </Accordion>
+        </section>
       </section>
     </section>
   );
