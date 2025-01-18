@@ -1,6 +1,6 @@
 "use client";
-import { useBooks } from "@/hooks/use-queries";
 import { useToast } from "@/hooks/use-toast";
+import { useFetch } from "@/hooks/useFetch";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +13,8 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
 const Footer = () => {
-  const { data: books } = useBooks();
+  const { data: books, loading, error } = useFetch("/data/BooksData.json");
+
   const { toast } = useToast();
 
   const handleSubmit = (e) => {
@@ -84,7 +85,7 @@ const Footer = () => {
           </div>
           <div>
             <h2 className="font-english text- text-xl font-bold pb-2">Books</h2>
-            <ul className="text-sm font-inter">
+            <ul className="text-sm font-bangla">
               {books?.map((book) => (
                 <li key={book.id}>
                   <Link href={`/books/${book.id}`}>{book.title}</Link>

@@ -14,14 +14,20 @@ import {
 import { MenuSquare } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
-const Usermenu = () => {
+const UserMenu = () => {
   const path = usePathname();
+
+  const [open, setOpen] = useState(false);
   return (
-    <Sheet className="md:hidden block">
+    <Sheet className="md:hidden block" onOpenChange={setOpen} open={open}>
       <SheetTrigger asChild>
-        <Button variant="outline" className="rounded-none md:hidden block">
-          <MenuSquare />
+        <Button
+          variant="outline"
+          className="rounded-none md:hidden block bg-primary border-none"
+        >
+          <MenuSquare className="size-10" />
         </Button>
       </SheetTrigger>
       <SheetContent>
@@ -31,6 +37,7 @@ const Usermenu = () => {
             <span className="font-english text-black flex-col items-center space-y-2 font-light">
               <Link
                 href={"/"}
+                onClick={() => setOpen(false)}
                 className={
                   path === "/"
                     ? "bg-secondary flex rounded px-2 py-2 text-primary"
@@ -42,6 +49,7 @@ const Usermenu = () => {
 
               <Link
                 href={"/books"}
+                onClick={() => setOpen(false)}
                 className={
                   path === "/books"
                     ? "bg-secondary flex rounded px-2 py-2 text-primary"
@@ -53,6 +61,7 @@ const Usermenu = () => {
 
               <Link
                 href={"/blogs"}
+                onClick={() => setOpen(false)}
                 className={
                   path === "/blogs"
                     ? "bg-secondary flex rounded px-2 py-2 text-primary"
@@ -64,6 +73,7 @@ const Usermenu = () => {
 
               <Link
                 href={"/about"}
+                onClick={() => setOpen(false)}
                 className={
                   path === "/about"
                     ? "bg-secondary flex rounded px-2 py-2 text-primary"
@@ -75,6 +85,7 @@ const Usermenu = () => {
 
               <Link
                 href={"/contact"}
+                onClick={() => setOpen(false)}
                 className={
                   path === "/contact"
                     ? "bg-secondary flex rounded px-2 py-2 text-primary"
@@ -97,4 +108,4 @@ const Usermenu = () => {
   );
 };
 
-export default Usermenu;
+export default UserMenu;

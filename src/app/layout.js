@@ -1,9 +1,8 @@
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar/navbar";
 import { Toaster } from "@/components/ui/toaster";
-import { Cardo, Inter, Tiro_Bangla } from "next/font/google";
+import { Cardo, Inter, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
-import QueryProvider from "./provider/QueryProvider";
 
 export const cardo = Cardo({
   variable: "--font-english",
@@ -19,9 +18,8 @@ export const inter = Inter({
   display: "swap",
 });
 
-export const tiroBangla = Tiro_Bangla({
-  variable: "--font-tiro-bangla",
-  weight: "400",
+export const notoSerifBangla = Noto_Serif_Bengali({
+  variable: "--font-sans-bengali",
   subsets: ["bengali"],
 });
 
@@ -33,18 +31,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth focus:scroll-auto">
-      <QueryProvider>
-        <body
-          className={`${cardo.variable} ${inter.variable} ${tiroBangla.variable} max-w-screen-2xl mx-auto scroll-smooth hover:scroll-auto`}
-        >
-          <div className="flex flex-col overflow-x-clip">
-            <Navbar />
-            <main className="flex flex-grow flex-col">{children}</main>
-            <Footer />
-          </div>
-          <Toaster />
-        </body>
-      </QueryProvider>
+      <body
+        className={`${cardo.variable} ${inter.variable} ${notoSerifBangla.variable} max-w-screen-2xl mx-auto scroll-smooth hover:scroll-auto`}
+      >
+        <div className="flex flex-col overflow-x-clip">
+          <Navbar />
+          <main className="flex flex-grow flex-col">{children}</main>
+          <Footer />
+        </div>
+        <Toaster />
+      </body>
     </html>
   );
 }

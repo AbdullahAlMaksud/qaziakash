@@ -34,7 +34,8 @@ const BooksCard = ({ book }) => {
           <span>{book.categories.join(", ")}</span>
         </div>
         <Link
-          href={"/"}
+          
+          href={`/books/${book.id}`}
           className=" border border-primary px-6 py-3 w-full flex justify-center hover:bg-primary"
         >
           বিস্তারিত দেখুন

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const BannerAd = () => {
   return (
@@ -14,9 +14,9 @@ const BannerAd = () => {
             This the first true value generator on the Internet. It uses alphas
             dictionary of over 200 Latin words.
           </p>
-          <Button className="rounded-none bg-transparent border border-primary text-white  mt-4">
-            Order Today
-          </Button>
+          <Link href={'/books'} className="rounded-none bg-transparent border border-primary text-white  mt-4">
+            সব বই
+          </Link>
         </div>
         <Image
           unoptimized="true"
