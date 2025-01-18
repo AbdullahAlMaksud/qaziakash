@@ -2,11 +2,22 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import { useFetch } from "@/hooks/useFetch";
+import { Package2Icon } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
-import { FaCartPlus } from "react-icons/fa6";
+import { FaCartPlus, FaCartShopping, FaCashRegister } from "react-icons/fa6";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -47,7 +58,7 @@ const BookDetails = () => {
     <section className="-mt-16">
       <div className="bg-deepblue py-8 text-white"></div>
 
-      <section className="w-11/12 mt-20 lg:container mx-auto px-4">
+      <section className="w-11/12 mt-20 lg:container mx-auto px-20">
         <div className="">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Book Image */}
@@ -134,6 +145,96 @@ const BookDetails = () => {
             </div>
 
             {/* Book Info */}
+          </div>
+        </div>
+      </section>
+      <section className="mt-20 w-11/12 lg:container mx-auto mb-10">
+        <Tabs defaultValue="additionalInformation" className="w-full">
+          <TabsList className="w-full gap-4 bg-transparent">
+            <TabsTrigger
+              className="rounded-none text-deepblue bg-lightblue"
+              value="additionalInformation"
+            >
+              Additional Information
+            </TabsTrigger>
+            <TabsTrigger
+              className="rounded-none text-deepblue bg-lightblue"
+              value="reviews"
+            >
+              Reviews and Ratings
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="additionalInformation">
+            <Table className="border">
+              <TableCaption></TableCaption>
+              <TableHeader></TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="w-1/6 bg-secondary">Title</TableCell>
+                  <TableCell>{book.title}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="w-1/6 bg-secondary">Author</TableCell>
+                  <TableCell>{book.author}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="w-1/6 bg-secondary">
+                    Publisher
+                  </TableCell>
+                  <TableCell>{book.publisher}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="w-1/6 bg-secondary">Edition</TableCell>
+                  <TableCell>{book.edition}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="w-1/6 bg-secondary">Pages</TableCell>
+                  <TableCell>{book.pages}</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TabsContent>
+          <TabsContent value="reviews">Coming soon...</TabsContent>
+        </Tabs>
+      </section>
+
+      {/* Guide to Buy */}
+
+      <section className="bg-primary">
+        <div className="mt-10 py-20 w-11/12 lg:container mx-auto grid grid-cols-3 gap-8">
+          <div className="flex flex-col items-center">
+            <div className="bg-deepblue w-16 h-16 flex items-center justify-center">
+              <FaCartShopping className="text-white size-8" />
+            </div>
+            <p className="font-bangla text-center pt-2 text-2xl font-bold">
+              কার্টে যোগ করুন
+            </p>
+            <p className="font-bangla text-center">
+              সংখ্যা নিশ্চিত করে বইটি কার্টে যোগ করুন
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="bg-deepblue w-16 h-16 flex items-center justify-center">
+              <FaCashRegister className="text-white size-8" />
+            </div>
+            <p className="font-bangla text-center pt-2 text-2xl font-bold">
+              মূল্য পরিশোধ করুন
+            </p>
+            <p className="font-bangla text-center">
+              মূল্য পরিশোধের মাধ্যম ও ট্রানজিকশন আইডি দিয়ে অর্ডার কনফার্ম করুন
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="bg-deepblue w-16 h-16 flex items-center justify-center">
+              <Package2Icon className="text-white size-8" />
+            </div>
+            <p className="font-bangla text-center pt-2 text-2xl font-bold">
+              সারাদেশে ডেলিভারি
+            </p>
+            <p className="font-bangla text-center">
+              সকল তথ্য ঠিক থাকলে আপনার ঠিকানায় বই পৌছে যাবে দ্রুততম সময়ে
+            </p>
           </div>
         </div>
       </section>
