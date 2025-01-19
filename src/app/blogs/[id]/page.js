@@ -2,7 +2,6 @@
 
 import { useFetch } from "@/hooks/useFetch";
 import Image from "next/image";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 
 const BookDetails = () => {
@@ -35,40 +34,35 @@ const BookDetails = () => {
 
   return (
     <section className="-mt-16">
-      <div className="bg-deepblue py-8 mb-5 text-white"></div>
+      <div className="bg-deepblue pt-32 pb-16 mb-20 text-white">
+        <h2 className="font-bangla text-3xl text-center">{post.title}</h2>
+        <hr className="w-16 h-0.5 bg-primary mx-auto my-3" />
+      </div>
       <section>
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Book Image */}
+        <div className="w-11/12 lg:container mx-auto">
+          <div className="flex flex-col w-10/12 mx-auto">
             <Image
+              unoptimized
               src={post.coverImage}
               alt=""
               height={100}
               width={100}
-              className="w-[20rem] h-60 object-cover"
+              className="h-96 w-full mx-auto object-cover object-top"
             />
+            {/* Book Image */}
 
-            <div className="px-8 py-7 flex flex-col flex-1">
-              <p className="mb-3 text-2xl h-[3.9rem] text-deepblue font-bold overflow-clip">
-                {post.title}
+            <div className="mt-4 bg-lightblue p-4">
+              <p className="font-bangla text-sm">
+                {post?.author} -{" "}
+                <span className="font-['kalpurush']">
+                  {" "}
+                  প্রকাশিত: {formatDate(post.publishDate)}
+                </span>
               </p>
-              <p className="font-inter text-gray-500 flex-1">
-                {post?.excerpt?.slice(0, 100)}...
-              </p>
-              <div className="flex mt-4 justify-between">
-                <Link
-                  className="border-b-2 border-deepblue text-deepblue font-bold font-bangla"
-                  href={"/"}
-                >
-                  আরও পড়ুন
-                </Link>
-                <p className="font-bangla text-sm">
-                  {post?.author} -{" "}
-                  <span className="font-['kalpurush']">
-                    {formatDate(post.publishDate)}
-                  </span>
-                </p>
-              </div>
+            </div>
+            <div className="py-4 flex flex-col flex-1">
+              <p className="font-bangla flex-1 text-justify">{post?.excerpt}</p>
+              <div className="flex mt-4 justify-between"></div>
             </div>
           </div>
         </div>
