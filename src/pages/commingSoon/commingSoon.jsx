@@ -8,6 +8,8 @@ export default function ComingSoon() {
   const { books } = useFetch("/data/booksData.json");
   return (
     <section className="min-h-screen flex items-center justify-center flex-col relative">
+      <div className="absolute border-x-4 border-y-0 rounded-full min-w-6 min-h-10 max-h-10 animate-bounce top-20 border-black "></div>
+
       <div className="bg-secondary w-full flex items-center justify-center py-20 flex-col">
         <h2 className="font-bangla text-4xl font-bold">
           <Typewriter
@@ -29,7 +31,7 @@ export default function ComingSoon() {
           <div className="border flex gap-1 lg:gap-1 p-0.5 border-black">
             <Link
               className="font-english font-extralight text-sm"
-              href={"https://www.facebook.com/"}
+              href={"https://www.facebook.com/sohagislam.akash/"}
             >
               <CiFacebook />
             </Link>
