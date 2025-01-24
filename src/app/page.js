@@ -1,10 +1,10 @@
-import ComingSoon from "@/pages/commingSoon/commingSoon";
+import HomePage from "@/pages/home/home";
 
 export default function Home() {
   return (
     <div className="text-bengali">
-      <ComingSoon />
-      {/* <HomePage /> */}
+      {/* <ComingSoon /> */}
+      <HomePage />
     </div>
   );
 }

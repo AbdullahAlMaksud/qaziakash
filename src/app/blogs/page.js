@@ -1,10 +1,30 @@
 "use client";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+// import {
+//   Pagination,
+//   PaginationContent,
+//   PaginationItem,
+//   PaginationLink,
+//   PaginationNext,
+//   PaginationPrevious,
+// } from "@/components/ui/pagination";
 import { useFetch } from "@/hooks/useFetch";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const Blogs = () => {
   const { data: posts, loading, error } = useFetch("/data/BlogsData.json");
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 4;
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-GB", {
@@ -16,38 +36,48 @@ const Blogs = () => {
 
   if (error) return <div>Error loading blogs</div>;
 
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts?.slice(indexOfFirstPost, indexOfLastPost);
+  const totalPages = Math.ceil((posts?.length || 0) / postsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <section className="-mt-16">
-      <div className="bg-deepblue py-32 text-white">
+      <div className="bg-deepblue pt-16 pb-8 lg:py-32 text-white">
         <div className="flex flex-col items-center font-english">
-          <h2 className="mb-4 text-center text-4xl lg:text-5xl font-bold">
+          <h2 className="mb-4 text-center text-3xl lg:text-5xl font-bold">
             Blogs
           </h2>
           <hr className="w-14 h-0.5 bg-primary mb-4 lg:mb-4" />
-          <p className="text-center w-1/3 mx-auto">
-            There are many variations of passages of Lorem Ipsum available, have
-            suffered alteration in some form.
+          <p className="text-center w-11/12 lg:w-1/3 mx-auto">
+            There are many variations of passages of Lorem Ipsum available,
+            have.
           </p>
         </div>
       </div>
 
-      <section className="flex  items-center justify-center w-11/12 mx-auto my-20">
+      <section className="flex items-center justify-center w-11/12 mx-auto my-8 lg:my-20">
         <div className="flex flex-col lg:flex-row gap-4 flex-wrap justify-center">
-          {posts?.map((post) => (
+          {currentPosts?.map((post) => (
             <div
               key={post.id}
-              className="w-[20rem] bg-white flex flex-col hover:shadow-sm"
+              className="w-[20rem] bg-white flex flex-col hover:shadow-sm border-2 pb-4"
             >
               <Image
                 src={post.coverImage}
                 alt=""
                 height={100}
                 width={100}
-                className="w-[20rem] h-60 object-cover"
+                className="w-[20rem] h-40 lg:h-60 object-cover"
               />
 
-              <div className="px-8 py-7 flex flex-col flex-1">
-                <p className="mb-3 text-2xl h-[3.9rem] text-deepblue font-bold overflow-clip">
+              <div className="px-4 lg:px-8 pt-2 lg:py-7 flex flex-col flex-1">
+                <p className="lg:mb-3 text-xl lg:text-3xl  text-deepblue font-bold overflow-clip">
                   {post.title}
                 </p>
                 <p className="font-inter text-gray-500 flex-1">
@@ -58,7 +88,7 @@ const Blogs = () => {
                     className="border-b-2 border-deepblue text-deepblue font-bold font-bangla"
                     href={`/blogs/${post.id}`}
                   >
-                    আরও পড়ুন
+                    আরও পড়ুন
                   </Link>
                   <p className="font-bangla text-sm">
                     {post?.author} -{" "}
@@ -72,6 +102,51 @@ const Blogs = () => {
           ))}
         </div>
       </section>
+
+      {/* Pagination */}
+      <div className="flex justify-center pb-8">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                onClick={() =>
+                  currentPage > 1 && handlePageChange(currentPage - 1)
+                }
+                className={
+                  currentPage === 1
+                    ? "cursor-not-allowed opacity-50"
+                    : "cursor-pointer"
+                }
+              />
+            </PaginationItem>
+
+            {[...Array(totalPages)].map((_, index) => (
+              <PaginationItem key={index}>
+                <PaginationLink
+                  onClick={() => handlePageChange(index + 1)}
+                  isActive={currentPage === index + 1}
+                  className={"font-['kalpurush]"}
+                >
+                  {index + 1}
+                </PaginationLink>
+              </PaginationItem>
+            ))}
+
+            <PaginationItem>
+              <PaginationNext
+                onClick={() =>
+                  currentPage < totalPages && handlePageChange(currentPage + 1)
+                }
+                className={
+                  currentPage === totalPages
+                    ? "cursor-not-allowed opacity-50"
+                    : "cursor-pointer"
+                }
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
     </section>
   );
 };

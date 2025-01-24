@@ -29,10 +29,10 @@ const Banner = () => {
   const { data: books, loading, error } = useFetch("/data/BooksData.json");
   return (
     <section className="-mt-16">
-      <div className="bg-gradient-to-t  from-[#031535] to-[#2a559d] min-h-[35rem] flex justify-center gap-20 items-center">
+      <div className="bg-gradient-to-t  from-[#031535] to-[#2a559d] min-h-[35rem] pt-16 lg:pt-0 flex flex-col-reverse lg:flex-row justify-center gap-4 lg:gap-20 items-center">
         {/* Left */}
 
-        <div className="w-1/3 font-bangla flex flex-col">
+        <div className="lg:w-1/3 w-11/12 pb-4 lg:pb-0 font-bangla flex flex-col">
           <p className="font-inter text-xs text-gray-400">
             Science, Math, History, Story Writer
           </p>
@@ -68,8 +68,9 @@ const Banner = () => {
                 href={`/books/${book.id}`}
                 className={`${bookClassById(
                   book.id
-                )} border-4 border-lightblue h-40 w-28 hover:scale-105 duration-200`}
+                )} relative border-4 border-lightblue h-40 w-28 hover:scale-105 duration-200`}
               >
+                <div className="absolute -top-2 animate-ping -left-2 w-5 h-5 rounded-full bg-primary -z-10"></div>
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger>
@@ -78,7 +79,7 @@ const Banner = () => {
                         alt={book.title}
                         height={100}
                         width={100}
-                        className="h-[9.5rem] w-28 object-cover"
+                        className="h-[9.5rem] w-28 object-cover relative"
                       />
                     </TooltipTrigger>
                     <TooltipContent>{book.title}</TooltipContent>

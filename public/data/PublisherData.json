@@ -6,29 +6,33 @@
     "about": "Making this the first true value generator on the Internet. It of over 200 Latin words, combined with a handful.",
     "url": "",
     "image": "/images/publishers/prothoma.png",
-    "role": "publisher"},
+    "role": "publisher"
+  },
   {
     "id": 2,
-    "name": "অনুপম",
-    "nameInEnglish": "Onupom",
-    "about": "Making this the first true value generator on the Internet. It of over 200 Latin words, combined with a handful.",
-    "url": "",
-    "image": "/images/publishers/onupom.jpg",
-    "role": "publisher"},
-  {
-    "id": 3,
     "name": "প্রথমা ডট কম",
     "nameInEnglish": "Prothoma Dot Com",
     "about": "Making this the first true value generator on the Internet. It of over 200 Latin words, combined with a handful.",
     "url": "",
     "image": "/images/publishers/prothomadotcom.jpg",
-    "role": "distributor"},
+    "role": "distributor"
+  },
   {
-    "id": 4,
+    "id": 3,
     "name": "রকমারি",
     "nameInEnglish": "Rokomari",
     "about": "Making this the first true value generator on the Internet. It of over 200 Latin words, combined with a handful.",
     "url": "",
     "image": "/images/publishers/rokomari.png",
-    "role": "distributor"}
+    "role": "distributor"
+  },
+  {
+    "id": 4,
+    "name": "অনুপম",
+    "nameInEnglish": "Onupom",
+    "about": "Making this the first true value generator on the Internet. It of over 200 Latin words, combined with a handful.",
+    "url": "",
+    "image": "/images/publishers/onupom.jpg",
+    "role": "publisher"
+  }
 ]

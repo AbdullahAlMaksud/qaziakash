@@ -18,7 +18,7 @@ const BooksSlider = () => {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <section className="mb-10 mt-20">
+    <section className="mb-10 mt-10 lg:mt-20">
       <div>
         <TitleOne title={"লেখকের সব বই"} />
       </div>
@@ -26,7 +26,6 @@ const BooksSlider = () => {
       <div className="relative w-11/12 mx-auto">
         <Swiper
           breakpoints={{
-            // Mobile view
             320: {
               slidesPerView: 2,
               spaceBetween: 20,
@@ -41,7 +40,7 @@ const BooksSlider = () => {
             prevEl: ".swiper-button-prev-custom",
             nextEl: ".swiper-button-next-custom",
           }}
-          modules={[Pagination, Navigation,]}
+          modules={[Pagination, Navigation]}
           className="mySwiper w-11/12 mx-auto"
           onSlideChange={(swiper) => {
             setIsBeginning(swiper.isBeginning);

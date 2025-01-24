@@ -58,11 +58,11 @@ const BookDetails = () => {
     <section className="-mt-16">
       <div className="bg-deepblue py-8 text-white"></div>
 
-      <section className="w-11/12 mt-20 lg:container mx-auto px-20">
+      <section className="w-11/12 lg:mt-20 lg:container mx-auto lg:px-20">
         <div className="">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Book Image */}
-            <div className="lg:w-2/6 flex items-center justify-center py-10 bg-gray-100">
+            <div className="lg:w-2/6 flex items-center justify-center lg:py-10 bg-gray-100">
               <Image
                 width={300}
                 height={400}

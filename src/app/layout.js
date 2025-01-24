@@ -1,3 +1,5 @@
+import Footer from "@/components/footer/footer";
+import Navbar from "@/components/navbar/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { Cardo, Inter, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
@@ -33,9 +35,9 @@ export default function RootLayout({ children }) {
         className={`${cardo.variable} ${inter.variable} ${notoSerifBangla.variable} max-w-screen-2xl mx-auto scroll-smooth hover:scroll-auto`}
       >
         <div className="flex flex-col overflow-x-clip">
-          {/* <Navbar /> */}
+          <Navbar />
           <main className="flex flex-grow flex-col">{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </div>
         <Toaster />
       </body>

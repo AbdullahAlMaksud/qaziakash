@@ -64,27 +64,46 @@ const faqData = [
   },
 ];
 
+const contactData = [
+  {
+    id: 2,
+    icon: <FaEnvelope />,
+    title: "Email",
+    description: "qaziakashmath@gmail.com",
+  },
+  {
+    id: 3,
+    icon: <FaPhone />,
+    title: "Phone",
+    description: "+8801711111111",
+  },
+  {
+    id: 4,
+    icon: <FaWhatsapp />,
+    title: "Whatsapp",
+    description: "+8801711111111",
+  },
+];
+
 const page = () => {
   return (
     <section className="-mt-16">
-      <div className="bg-deepblue py-32 text-white">
+      <div className="bg-deepblue pt-16 pb-8 lg:py-32 text-white">
         <div className="flex flex-col items-center font-english">
-          <h2 className="mb-4 text-center text-4xl lg:text-5xl font-bold">
+          <h2 className="mb-4 text-center text-3xl lg:text-5xl font-bold">
             Connect with Author
           </h2>
           <hr className="w-14 h-0.5 bg-primary mb-4 lg:mb-4" />
-          <p className="text-center w-1/3 mx-auto">
-            There are many variations of passages of Lorem Ipsum available, have
-            suffered alteration in some form.
-          </p>
         </div>
       </div>
 
       {/* Keep in touch section */}
-      <section className="flex w-11/12 lg:container gap-20 mx-auto px-24 my-16 items-center justify-between">
+      <section className="flex flex-col lg:flex-row w-11/12 lg:container gap-8 lg:gap-20 mx-auto lg:px-24 lg:my-16 mt-8 items-center justify-between">
         {/* Left */}
-        <div className="w-1/2">
-          <h3 className="font-english text-3xl font-bold">Keep in Touch</h3>
+        <div className="lg:w-1/2">
+          <h3 className="font-english text-3xl font-bold text-deepblue">
+            Keep in Touch
+          </h3>
           <hr className="w-14 h-0.5 bg-primary my-4" />
           <p className="mb-4 font-inter text-sm text-gray-400">
             There are many variations of passages of Lorem Ipsum available, but
@@ -93,44 +112,26 @@ const page = () => {
             believable.
           </p>
           <div className="flex flex-col gap-2">
-            <div className="flex gap-5 font-english">
-              <div className="bg-deepblue w-fit min-w-12 text-xl min-h-12 flex justify-center items-center text-primary">
-                <FaPhone />
+            {contactData.map((item, index) => (
+              <div key={index} className="flex gap-4 font-english">
+                <div className="bg-deepblue w-fit min-w-12 text-xl min-h-12 flex justify-center items-center text-primary">
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="text-xl lg:text-2xl font-bold">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm font-inter text-gray-600">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-2xl font-bold">Address:</h4>
-                <p className="text-sm font-inter text-gray-600">
-                  No: 09a, Downtown, San Dieago, USA.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-5">
-              <div className="bg-deepblue w-fit min-w-12 text-xl min-h-12 flex justify-center items-center text-primary">
-                <FaEnvelope />
-              </div>
-              <div>
-                <h4 className="text-2xl font-bold font-english">Address:</h4>
-                <p className="text-sm font-inter text-gray-600">
-                  No: 09a, Downtown, San Dieago, USA.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-5">
-              <div className="bg-deepblue w-fit min-w-12 text-xl min-h-12 flex justify-center items-center text-primary">
-                <FaWhatsapp />
-              </div>
-              <div>
-                <h4 className="text-2xl font-bold font-english ">Address:</h4>
-                <p className="text-sm font-inter text-gray-600">
-                  No: 09a, Downtown, San Dieago, USA.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         {/* Right */}
 
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <form className="flex flex-col gap-2">
             <div className="flex gap-2 items-center justify-between">
               <div className="relative flex gap-2 border border-lightblue items-center w-1/2">
@@ -179,9 +180,9 @@ const page = () => {
         </div>
       </section>
 
-      <section className="bg-lightblue py-16">
+      <section className="bg-lightblue py-8 mt-8 lg:mt-0 lg:py-16">
         <section className="w-11/12 lg:container mx-auto">
-          <h3 className="text-3xl font-bold text-center">
+          <h3 className="text-2xl lg:text-3xl font-bold text-center">
             Frequently Asked Questions
           </h3>
           <hr className="w-14 h-0.5 bg-primary my-4 mx-auto" />
@@ -189,7 +190,7 @@ const page = () => {
           <Accordion
             type="single"
             collapsible
-            className="w-full grid grid-cols-2 gap-4"
+            className="w-full grid md:grid-cols-2 gap-4"
           >
             {faqData.flatMap((category, catIndex) =>
               category.questions.map((faq, index) => (
