@@ -19,7 +19,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 100;
+      const isScrolled = window.scrollY > 5;
       setScrolled(isScrolled);
     };
 
@@ -29,13 +29,17 @@ const Navbar = () => {
 
   const getNavbarClass = () => {
     return scrolled
-      ? "bg-deepblue/70 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 px-1 lg:py-3 py-2 max-w-80 md:max-w-7xl mx-auto"
-      : "bg-transparent max-w-screen-2xl py-3 w-full";
+      ? "bg-secondary/40 backdrop-blur-md rounded-b-md mx-auto transition-colors duration-300 px-1 lg:py-3 py-2 max-w-[22rem] md:max-w-7xl mx-auto"
+      : `bg-transparent duration-300 max-w-screen-2xl py-3 w-full`;
   };
 
   return (
     <nav
-      className={`sticky top-0 left-0 z-50 w-full text-white  ${getNavbarClass()}`}
+      className={
+        path === "/"
+          ? `sticky top-0 left-0 z-50 w-full text-primary-foreground  ${getNavbarClass()}`
+          : `sticky top-0 left-0 z-50 w-full text-primary-foreground  ${getNavbarClass()}  shadow-sm shadow-black/10`
+      }
     >
       <section className="md:container w-11/12 mx-auto lg:px-4 flex items-center justify-between">
         {/* Logo */}
@@ -44,7 +48,7 @@ const Navbar = () => {
             <p>
               <LibraryBig className="text-primary size-7" />
             </p>
-            <h2 className="font-bangla text-white font-medium text-xl hover:text-black">
+            <h2 className="font-bengali text-secondary-foreground font-bold text-xl hover:text-black hover:scale-125 duration-300">
               কাজী আকাশ
             </h2>
           </Link>

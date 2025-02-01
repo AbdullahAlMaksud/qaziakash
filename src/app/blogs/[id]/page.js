@@ -20,7 +20,7 @@ const BookDetails = () => {
   if (loading) {
     return (
       <div className=" -mt-16">
-        <div className="h-[calc(100vh-240px)] bg-deepblue text-white flex items-center justify-center">
+        <div className="h-[calc(100vh-240px)] bg-primary text-white flex items-center justify-center">
           <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primary"></div>
         </div>
       </div>
@@ -34,8 +34,8 @@ const BookDetails = () => {
 
   return (
     <section className="-mt-16">
-      <div className="bg-deepblue pt-20 lg:pt-32 pb-4 lg:pb-16 lg:mb-20 text-white">
-        <h2 className="font-bangla text-2xl px-4 lg:text-3xl text-center">
+      <div className="bg-primary pt-20 lg:pt-32 pb-4 lg:pb-16 lg:mb-20 text-white">
+        <h2 className="font-bengali text-2xl px-4 lg:text-3xl text-center">
           {post.title}
         </h2>
         <hr className="w-16 h-0.5 bg-primary mx-auto my-3" />
@@ -55,7 +55,7 @@ const BookDetails = () => {
             {/* Book Image */}
 
             <div className="mt-4 bg-lightblue p-4 mx-4 lg:mx-0">
-              <p className="font-bangla text-sm">
+              <p className="font-bengali text-sm">
                 {post?.author} -{" "}
                 <span className="font-['kalpurush']">
                   {" "}
@@ -64,7 +64,9 @@ const BookDetails = () => {
               </p>
             </div>
             <div className="py-4 mx-4 lg:mx-0 flex flex-col flex-1">
-              <p className="font-bangla flex-1 text-justify">{post?.excerpt}</p>
+              <p className="font-bengali flex-1 text-justify">
+                {post?.excerpt}
+              </p>
               <div className="flex mt-4 justify-between"></div>
             </div>
           </div>

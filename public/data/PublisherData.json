@@ -34,5 +34,23 @@
     "url": "",
     "image": "/images/publishers/onupom.jpg",
     "role": "publisher"
+  },
+  {
+    "id": 5,
+    "name": "ওয়াফিলাইফ",
+    "nameInEnglish": "Wafilife",
+    "about": "Making this the first true value generator on the Internet. It of over 200 Latin words, combined with a handful.",
+    "url": "",
+    "image": "/images/publishers/wafilife.webp",
+    "role": "distributor"
+  },
+  {
+    "id": 6,
+    "name": "পিবিএস",
+    "nameInEnglish": "PBS",
+    "about": "Making this the first true value generator on the Internet. It of over 200 Latin words, combined with a handful.",
+    "url": "",
+    "image": "/images/publishers/pbs.png",
+    "role": "distributor"
   }
 ]

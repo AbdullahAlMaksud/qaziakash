@@ -1,13 +1,10 @@
 "use client";
 import { useToast } from "@/hooks/use-toast";
 import { useFetch } from "@/hooks/useFetch";
-import Image from "next/image";
+import { LibraryBig } from "lucide-react";
 import Link from "next/link";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaYoutubeSquare,
-} from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaLinkedin, FaPaperPlane, FaXTwitter } from "react-icons/fa6";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
@@ -20,72 +17,68 @@ const Footer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast({
-      title: "Message Sent",
-      description: "Your message has been sent successfully.",
+      title: "মেসেজ পাঠানো হয়েছে",
+      description: "আপনার মেসেজ সফলভাবে লেখকের কাছে পৌছে গিয়েছে।",
     });
   };
 
   return (
-    <footer className="bg-deepblue dark:bg-gray-900 text-white">
+    <footer className="bg-secondary-foreground dark:bg-gray-900 rounded-t-xl text-white">
       <div className="w-9/12 container mx-auto py-10 flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col  lg:items-start">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              height={100}
-              width={100}
-              className="w-auto h-7"
-              src="/fav-icon.svg"
-              alt=""
-            />
-            <span className="font-english text-xl">Qazi Akash</span>
+            <LibraryBig className="text-primary" />
+            <span className="font-english text-xl">কাজী আকাশ</span>
           </Link>
 
           <div className="flex gap-2  mt-4">
             <Link
-              href={"/"}
-              className="text-white border-primary text-2xl p-2 border"
+              href={"https://www.facebook.com/sohagislam.akash "}
+              className="text-white border-primary rounded text-2xl p-2 border"
             >
               <FaFacebookSquare />
             </Link>
             <Link
-              href={"/"}
-              className="text-white border-primary text-2xl p-2 border"
+              href={"https://x.com/akash_qazi"}
+              className="text-white border-primary rounded text-2xl p-2 border"
             >
-              <FaInstagramSquare />
+              <FaXTwitter />
             </Link>
             <Link
-              href={"/"}
-              className="text-white border-primary text-2xl p-2 border"
+              href={"https://www.linkedin.com/in/qazi-akash-99744726b/"}
+              className="text-white border-primary rounded text-2xl p-2 border"
             >
-              <FaYoutubeSquare />
+              <FaLinkedin />
             </Link>
           </div>
         </div>
 
         <div className="flex flex-row justify-between my-4 lg:gap-10 lg:mt-0">
-          <div className="">
-            <h2 className="font-english text- text-xl font-bold pb-2">Pages</h2>
+          <div className="w-16">
+            <h2 className="font-english text- text-xl font-bold pb-2">পেজ</h2>
             <ul className="text-sm font-inter">
               <li>
-                <Link href={"/"}>Home</Link>
+                <Link href={"/"}>হোম</Link>
               </li>
               <li>
-                <Link href={"/"}>About</Link>
+                <Link href={"/"}>বইপত্র</Link>
               </li>
               <li>
-                <Link href={"/"}>Books</Link>
+                <Link href={"/"}>লেখালেখি</Link>
               </li>
               <li>
-                <Link href={"/"}>Blogs</Link>
+                <Link href={"/"}>যোগাযোগ</Link>
               </li>
               <li>
-                <Link href={"/"}>Appointments</Link>
+                <Link href={"/"}>পরিচিত</Link>
               </li>
             </ul>
           </div>
           <div>
-            <h2 className="font-english text- text-xl font-bold pb-2">Books</h2>
-            <ul className="text-sm font-bangla">
+            <h2 className="font-english text- text-xl font-bold pb-2">
+              বইপত্র
+            </h2>
+            <ul className="text-sm font-bengali">
               {books?.map((book) => (
                 <li key={book.id}>
                   <Link href={`/books/${book.id}`}>{book.title}</Link>
@@ -97,34 +90,30 @@ const Footer = () => {
 
         <div>
           <h2 className="font-english text- text-xl font-bold pb-2">
-            Send a Massages
+            মেসেজ পাঠান
           </h2>
 
           <div>
             <form className="space-y-2 flex flex-col">
               <div className="flex gap-2 flex-col lg:flex-row">
                 <Input
-                  className="bg-white/10 rounded-none px-4 py-1 lg:w-40 placeholder:font-english shadow-none"
-                  placeholder="Name"
+                  className="bg-white/10 rounded px-4 py-1 lg:w-40 placeholder:font-english shadow-none"
+                  placeholder="আপনার নাম"
                   required
                 />
                 <Input
-                  className="bg-white/10 rounded-none px-4 py-1 lg:w-60 placeholder:font-english shadow-none"
-                  placeholder="Email"
+                  className="bg-white/10 rounded px-4 py-1 lg:w-60 placeholder:font-english shadow-none"
+                  placeholder="ইমেইল অ্যাড্রেস"
                   required
                 />
               </div>
               <Textarea
-                className="bg-white/10 rounded-none px-4 py-1 w-full placeholder:font-english shadow-none resize-none"
+                className="bg-white/10 rounded px-4 py-1 w-full placeholder:font-english shadow-none resize-none"
                 rows={3}
-                placeholder="Message"
+                placeholder="আপনার মেসেজ লিখুন..."
               />
-              <Button
-                type="submit"
-                className="rounded-none"
-                onClick={handleSubmit}
-              >
-                Send
+              <Button type="submit" className="rounded" onClick={handleSubmit}>
+                পাঠিয়ে দিন <FaPaperPlane />
               </Button>
             </form>
           </div>
@@ -134,7 +123,13 @@ const Footer = () => {
       <div className="space-y-5 flex justify-center flex-col items-center">
         <hr className="w-1/2 border-gray-500" />
         <p className="text-sm text-gray-300 font-english dark:text-gray-300 pb-5">
-          © Copyright 2025. All Rights Reserved.
+          © {new Date().getFullYear()} Qazi Akash | All Rights Reserved. |{" "}
+          <Link
+            className="inline-block"
+            href={"https://www.linkedin.com/in/abdullahalmaksud"}
+          >
+            Made with ❤️ in Bangladesh.
+          </Link>
         </p>
       </div>
     </footer>

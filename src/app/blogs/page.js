@@ -48,19 +48,6 @@ const Blogs = () => {
 
   return (
     <section className="-mt-16">
-      <div className="bg-deepblue pt-16 pb-8 lg:py-32 text-white">
-        <div className="flex flex-col items-center font-english">
-          <h2 className="mb-4 text-center text-3xl lg:text-5xl font-bold">
-            Blogs
-          </h2>
-          <hr className="w-14 h-0.5 bg-primary mb-4 lg:mb-4" />
-          <p className="text-center w-11/12 lg:w-1/3 mx-auto">
-            There are many variations of passages of Lorem Ipsum available,
-            have.
-          </p>
-        </div>
-      </div>
-
       <section className="flex items-center justify-center w-11/12 mx-auto my-8 lg:my-20">
         <div className="flex flex-col lg:flex-row gap-4 flex-wrap justify-center">
           {currentPosts?.map((post) => (
@@ -77,7 +64,7 @@ const Blogs = () => {
               />
 
               <div className="px-4 lg:px-8 pt-2 lg:py-7 flex flex-col flex-1">
-                <p className="lg:mb-3 text-xl lg:text-3xl  text-deepblue font-bold overflow-clip">
+                <p className="lg:mb-3 text-xl lg:text-3xl  text-primary font-bold overflow-clip">
                   {post.title}
                 </p>
                 <p className="font-inter text-gray-500 flex-1">
@@ -85,12 +72,12 @@ const Blogs = () => {
                 </p>
                 <div className="flex mt-4 justify-between">
                   <Link
-                    className="border-b-2 border-deepblue text-deepblue font-bold font-bangla"
+                    className="border-b-2 border-primary text-primary font-bold font-bengali"
                     href={`/blogs/${post.id}`}
                   >
                     আরও পড়ুন
                   </Link>
-                  <p className="font-bangla text-sm">
+                  <p className="font-bengali text-sm">
                     {post?.author} -{" "}
                     <span className="font-['kalpurush']">
                       {formatDate(post.publishDate)}

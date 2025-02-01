@@ -5,23 +5,23 @@ import { usePathname } from "next/navigation";
 
 const menu = [
   {
-    menuName: "Home",
+    menuName: "হোম",
     menuLink: "/",
   },
   {
-    menuName: "Books",
+    menuName: "বইপত্র",
     menuLink: "/books",
   },
   {
-    menuName: "Blogs",
+    menuName: "লেখালেখি",
     menuLink: "/blogs",
   },
   {
-    menuName: "About",
+    menuName: "পরিচিতি",
     menuLink: "/about",
   },
   {
-    menuName: "Contact",
+    menuName: "যোগাযোগ",
     menuLink: "/contact",
   },
 ];
@@ -30,7 +30,7 @@ const UserNavMenu = () => {
   const path = usePathname();
 
   return (
-    <ul className="hidden font-english text-white md:flex items-center gap-1 font-light">
+    <ul className="hidden font-english text-secondary-foreground md:flex items-center gap-1 font-light">
       {menu.map((item, index) => (
         <li key={index}>
           <Link
@@ -41,12 +41,7 @@ const UserNavMenu = () => {
                 : " px-2 py-2 hover:text-primary"
             }
           >
-            {path === item.menuLink ? (
-              <>
-                <span className="absolute left-0 w-full -z-0  h-3 top-2 bg-white/10"></span>
-                <span className="absolute -left-1.5 w-full -z-10  h-3 top-1.5 bg-deepblue"></span>
-              </>
-            ) : null}
+            {path === item.menuLink ? <></> : null}
             {item.menuName}
           </Link>
         </li>

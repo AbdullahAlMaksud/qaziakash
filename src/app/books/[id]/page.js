@@ -15,6 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useFetch } from "@/hooks/useFetch";
 import { Package2Icon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { FaCartPlus, FaCartShopping, FaCashRegister } from "react-icons/fa6";
@@ -41,8 +42,8 @@ const BookDetails = () => {
 
   if (loading) {
     return (
-      <div className=" -mt-16">
-        <div className="h-[calc(100vh-240px)] bg-deepblue text-white flex items-center justify-center">
+      <div className="-mt-16">
+        <div className="h-[calc(100vh-240px)] text-primary flex items-center justify-center">
           <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primary"></div>
         </div>
       </div>
@@ -56,7 +57,7 @@ const BookDetails = () => {
 
   return (
     <section className="-mt-16">
-      <div className="bg-deepblue py-8 text-white"></div>
+      <div className="py-8 text-white"></div>
 
       <section className="w-11/12 lg:mt-20 lg:container mx-auto lg:px-20">
         <div className="">
@@ -74,7 +75,10 @@ const BookDetails = () => {
 
             {/* Book Info */}
             <div className="lg:w-4/6">
-              <h1 className="text-3xl font-bold mb-4">{book.title}</h1>
+              <h1 className="text-3xl font-bold mb-4">
+                {book.title}{" "}
+                {book.subtitle ? <span>: {book.subtitle} </span> : null}
+              </h1>
               <p className="text-3xl font-bold text-primary font-['kalpurush']">
                 ৳ {book.price}
               </p>
@@ -83,29 +87,49 @@ const BookDetails = () => {
 
               <div className="flex items-center gap-8">
                 <div className="">
-                  <p className="font-bangla">প্রকাশক</p>
-                  <p className="font-bangla">পৃষ্ঠা</p>
-                  <p className="font-bangla">ভাষা</p>
-                  <p className="font-bangla">ISBN</p>
-                  <p className="font-bangla">আকার</p>
+                  <p className="font-bengali">প্রকাশক</p>
+                  <p className="font-bengali">পৃষ্ঠা</p>
+                  <p className="font-bengali">ভাষা</p>
+                  <p className="font-bengali">ISBN</p>
+                  <p className="font-bengali">আকার</p>
                 </div>
                 <div className="">
-                  <p className="font-bangla">:</p>
-                  <p className="font-bangla">:</p>
-                  <p className="font-bangla">:</p>
-                  <p className="font-bangla">:</p>
-                  <p className="font-bangla">:</p>
+                  <p className="font-bengali">:</p>
+                  <p className="font-bengali">:</p>
+                  <p className="font-bengali">:</p>
+                  <p className="font-bengali">:</p>
+                  <p className="font-bengali">:</p>
                 </div>
                 <div className="">
-                  <p className="font-bangla">{book.publisher}</p>
+                  <p className="font-bengali">{book.publisher}</p>
                   <p className="font-['kalpurush']">{book.pages}</p>
-                  <p className="font-bangla">{book.language || "Not Found"}</p>
-                  <p className="font-bangla">{book.ISBN}</p>
-                  <p className="font-bangla">{book.size}</p>
+                  <p className="font-bengali">{book.language || "Not Found"}</p>
+                  <p className="font-bengali">{book.ISBN}</p>
+                  <p className="font-bengali">{book.size}</p>
                 </div>
               </div>
 
+              {/* Perches button */}
               <div className="flex items-center gap-5 mt-8">
+                {book.purchaseLink?.map((link, index) => (
+                  <Link
+                    href={link.link}
+                    key={index}
+                    className="w-32 flex justify-center h-14 items-center bg-white text-primary rounded shadow-lg hover:scale-110 flex-wrap"
+                  >
+                    <Image
+                      src={link.logo}
+                      width={100}
+                      height={100}
+                      alt={`${index}logo`}
+                      className="h-8 w-auto"
+                    />
+                  </Link>
+                ))}
+              </div>
+
+              {/* Cart button */}
+              <div className="hidden items-center gap-5 mt-8">
                 <div className="grid grid-cols-3 items-center gap-1 border p-0.5 w-fit border-primary">
                   <Button
                     onClick={decreaseCount}
@@ -123,7 +147,7 @@ const BookDetails = () => {
                     }}
                     type="text"
                     min="0"
-                    className="text-center p-0 w-10 px-0 flex font-['kalpurush']  shadow-none border-none"
+                    className="text-center p-0 w-10 px-0 flex font-['kalpurush'] shadow-none border-none"
                   />
                   <Button
                     onClick={increaseCount}
@@ -136,7 +160,7 @@ const BookDetails = () => {
                 <div className="w-full p-0.5 bg-primary flex items-center justify-center">
                   <Button
                     onClick={increaseCount}
-                    className="font-bangla font-bold rounded-none shadow-none w-full"
+                    className="font-bengali font-bold rounded-none shadow-none w-full"
                   >
                     <FaCartPlus /> কার্টে যোগ করুন
                   </Button>
@@ -152,21 +176,18 @@ const BookDetails = () => {
         <Tabs defaultValue="additionalInformation" className="w-full">
           <TabsList className="w-full gap-4 bg-transparent">
             <TabsTrigger
-              className="rounded-none text-deepblue bg-lightblue"
+              className=" py-2 rounded  bg-secondary"
               value="additionalInformation"
             >
               Additional Information
             </TabsTrigger>
-            <TabsTrigger
-              className="rounded-none text-deepblue bg-lightblue"
-              value="reviews"
-            >
+            <TabsTrigger className="py-2 rounded  bg-secondary" value="reviews">
               Reviews and Ratings
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="additionalInformation">
-            <Table className="border">
+            <Table className="border rounded">
               <TableCaption></TableCaption>
               <TableHeader></TableHeader>
               <TableBody>
@@ -201,38 +222,38 @@ const BookDetails = () => {
 
       {/* Guide to Buy */}
 
-      <section className="bg-primary">
+      <section className="bg-primary hidden">
         <div className="mt-10 py-20 w-11/12 lg:container mx-auto grid grid-cols-3 gap-8">
           <div className="flex flex-col items-center">
-            <div className="bg-deepblue w-16 h-16 flex items-center justify-center">
+            <div className="bg-primary w-16 h-16 flex items-center justify-center">
               <FaCartShopping className="text-white size-8" />
             </div>
-            <p className="font-bangla text-center pt-2 text-2xl font-bold">
+            <p className="font-bengali text-center pt-2 text-2xl font-bold">
               কার্টে যোগ করুন
             </p>
-            <p className="font-bangla text-center">
+            <p className="font-bengali text-center">
               সংখ্যা নিশ্চিত করে বইটি কার্টে যোগ করুন
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="bg-deepblue w-16 h-16 flex items-center justify-center">
+            <div className="bg-primary w-16 h-16 flex items-center justify-center">
               <FaCashRegister className="text-white size-8" />
             </div>
-            <p className="font-bangla text-center pt-2 text-2xl font-bold">
+            <p className="font-bengali text-center pt-2 text-2xl font-bold">
               মূল্য পরিশোধ করুন
             </p>
-            <p className="font-bangla text-center">
+            <p className="font-bengali text-center">
               মূল্য পরিশোধের মাধ্যম ও ট্রানজিকশন আইডি দিয়ে অর্ডার কনফার্ম করুন
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="bg-deepblue w-16 h-16 flex items-center justify-center">
+            <div className="bg-primary w-16 h-16 flex items-center justify-center">
               <Package2Icon className="text-white size-8" />
             </div>
-            <p className="font-bangla text-center pt-2 text-2xl font-bold">
+            <p className="font-bengali text-center pt-2 text-2xl font-bold">
               সারাদেশে ডেলিভারি
             </p>
-            <p className="font-bangla text-center">
+            <p className="font-bengali text-center">
               সকল তথ্য ঠিক থাকলে আপনার ঠিকানায় বই পৌছে যাবে দ্রুততম সময়ে
             </p>
           </div>

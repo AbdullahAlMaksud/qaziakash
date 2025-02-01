@@ -18,7 +18,7 @@ const BooksSlider = () => {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <section className="mb-10 mt-10 lg:mt-20">
+    <section className="">
       <div>
         <TitleOne title={"লেখকের সব বই"} />
       </div>
@@ -40,14 +40,15 @@ const BooksSlider = () => {
             prevEl: ".swiper-button-prev-custom",
             nextEl: ".swiper-button-next-custom",
           }}
+          loop={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper w-11/12 mx-auto"
+          className="mySwiper w-11/12 mx-auto flex items-center justify-center"
           onSlideChange={(swiper) => {
             setIsBeginning(swiper.isBeginning);
             setIsEnd(swiper.isEnd);
           }}
         >
-          <div>
+          <div className="bg-black mx-2 flex items-center justify-center">
             {books?.map((book) => (
               <SwiperSlide key={book.id}>
                 <BooksCard book={book} />
@@ -58,7 +59,7 @@ const BooksSlider = () => {
 
         {/* Navigation buttons */}
         <Button
-          className={`swiper-button-prev-custom absolute top-1/2 left-0 z-10 p-2 rounded-none shadow-md transition-all
+          className={`swiper-button-prev-custom absolute top-1/2 left-0 z-10 rounded-none shadow-md transition-all
           ${
             isBeginning
               ? "bg-gray-200 cursor-not-allowed opacity-50"

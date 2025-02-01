@@ -2,10 +2,12 @@
   {
     "id": 1,
     "title": "ঝটপট গণিত",
+    "subtitle": "সহজ কলাকৌশল",
     "author": "কাজী আকাশ",
     "description": "হিসাব-নিকাশ ছাড়া আমরা এক দিনও চলতে পারি না। ঘুম থেকে ওঠার পরই শুরু হয় নানা ধরনের হিসাব। শিক্ষার্থীদের, বিশেষ করে চাকরিপ্রার্থী বা ভর্তি পরীক্ষার্থীদের জন্য কথাটা আরও বেশি প্রযোজ্য। তাই এ বই সবার জন্য। বইটি এমনভাবে সাজানো হয়েছে, যাতে ৩০ দিনে সবাই শেষ করতে পারেন। এক মাস পরে যোগ, বিয়োগ, গুণ ও ভাগের সমাধান করা যাবে নিমেষে।",
-    "price": 100,
-    "pages": 96,
+    "shortDescription": "হিসাব-নিকাশ ছাড়া আমরা এক দিনও চলতে পারি না। শিক্ষার্থীদের, বিশেষ করে চাকরিপ্রার্থী বা ভর্তি পরীক্ষার্থীদের জন্য কথাটা আরও বেশি প্রযোজ্য। তাই এ বই সবার জন্য। বইটি এমনভাবে সাজানো হয়েছে, যাতে ৩০ দিনে সবাই শেষ করতে পারেন। এক মাস পরে যোগ, বিয়োগ, গুণ ও ভাগের সমাধান করা যাবে নিমেষে।",
+    "price": 300,
+    "pages": 144,
     "cover": "/images/books_cover/JhotpotGonit.jpg",
     "categories": ["গণিত"],
     "rating": 4.5,
@@ -13,14 +15,92 @@
     "publisher": "প্রথমা প্রকাশন",
     "edition": 1,
     "language": "বাংলা",
-    "ISBN": "9789849171726",
+    "ISBN": "9789849917014",
     "size": "13.5 x 1.5 x 20.5 cm",
-    "timeToRead": 10
+    "timeToRead": 10,
+    "isNew": true,
+    "publishedDate": "2025-01-24T18:10:33−12:00",
+    "year": "2024",
+    "purchaseLink": [
+      {
+        "logo": "/images/publishers/prothomadotcom.jpg",
+        "link": "https://www.prothoma.com/product/47748/jhotpot-gonit-sohoj-kolakoushol"
+      },
+
+      {
+        "logo": "/images/publishers/wafilife.webp",
+        "link": "https://www.wafilife.com/jhotpot-gonit-shohoj-kolakoushol/dp/1160415"
+      },
+      {
+        "logo": "/images/publishers/rokomari.png",
+        "link": "https://www.rokomari.com/book/439058/jotpot-gonit-sohoj-kolakousol"
+      },
+      {
+        "logo": "/images/publishers/pbs.png",
+        "link": "https://pbs.com.bd/book/2409466/jotpot-gonit-sohoj-kolakousol"
+      },
+      {
+        "logo": "/images/publishers/baatighar.png",
+        "link": "https://baatighar.com/shop/9789849917014-99882"
+      }
+    ]
   },
   {
     "id": 2,
+    "title": "মাথায় যত প্রশ্ন আসে",
+    "author": "কাজী আকাশ",
+
+    "description": "পৃথিবীর প্রথম বিজ্ঞানী কে? বাংলাদেশে বরফ পড়ে না কেন? বিশ্বে মোট কত প্রজাতির প্রাণী আছে? এমন নানা প্রশ্ন আমাদের মাথায় ঘুরপাক খায় প্রতিদিন। অনেক ক্ষেত্রেই মেলে না এসব প্রশ্নের বৈজ্ঞানিক উত্তর। অথচ আমাদের মাথায় উঁকি দেওয়া এসব প্রশ্নের কোনোটিই ছোট নয়। এগুলোর উত্তর খুঁজতে গিয়েই শুরু হতে পারে বিজ্ঞানচর্চা। মাথায় যত প্রশ্ন আসে বইয়ে এমন ৪০টি মজার প্রশ্নের বৈজ্ঞানিক উত্তর রয়েছে। এসব প্রশোত্তরে যেমন দৈনন্দিন জীবনের নানা প্রশ্নের বিজ্ঞানভিত্তিক বিশ্লেষণ পাবেন, তেমনি ডুব দিতে পারবেন মহাবিশ্বের রহস্যময় জগতটিতে। শিক্ষার্থী, শিক্ষক, বিজ্ঞানমনস্ক পাঠক কিংবা যেকোনো কৌতূহলী মানুষ—সবার জন্য এ বই। চলুন, মনের গভীর গোপনের খানিকটা কৌতূহল মিটিয়ে নেওয়া যাক।",
+    "shortDescription": "পৃথিবীর প্রথম বিজ্ঞানী কে? বাংলাদেশে বরফ পড়ে না কেন? বিশ্বে মোট কত প্রজাতির প্রাণী আছে? এমন নানা প্রশ্ন আমাদের মাথায় ঘুরপাক খায় প্রতিদিন। এরকম ৪০টি মজার প্রশ্নের বৈজ্ঞানিক উত্তর নিয়ে এ বই। শিক্ষার্থী, শিক্ষক, বিজ্ঞানমনস্ক পাঠক কিংবা যেকোনো কৌতূহলী মানুষ—এ বই সবার জন্য।",
+    "price": 250,
+    "pages": 94,
+    "cover": "/images/books_cover/MathayJotoProshnoAshe.jpg",
+    "categories": ["বিজ্ঞান"],
+    "rating": 5,
+    "ratedByUser": 132,
+    "publisher": "অনুপম প্রকাশনী",
+    "edition": 1,
+    "language": "বাংলা",
+    "ISBN": "9789849808046",
+    "size": "13.5 x 1.5 x 20.5 cm",
+    "timeToRead": 6,
+    "isNew": true,
+    "publishedDate": "2025-01-24T18:10:33−12:00",
+    "year": "2025"
+  },
+  {
+    "id": 3,
+    "title": "গণিতের চমক",
+    "author": "কাজী আকাশ",
+    "shortDescription": "তুমি বন্ধুদের চেয়ে একধাপ এগিয়ে থাকতে চাও? তাহলে গণিতের এই জাদুমঞ্চে তোমাকে স্বাগতম। মুহূর্তে যোগ, বিয়োগ, গুণ ও ভাগ করার ম্যাজিক আছে এই বইয়ে।",
+    "description": "৪৫ ও ১১ গুণ করলে কত হবে? নিশ্চয়ই চিন্তায় পড়ে গেছ। কিন্তু কৌশল জানা থাকলে উত্তর করতে পারবে মাত্র ১ সেকেন্ডে। ৪ + ৫ = ৯, তাই উত্তর হলো ৪৯৫। অর্থাৎ ৪ ও ৫-এর যোগফল শুধু মাঝে বসিয়ে দিলেই হয়ে যাবে উত্তর। ২৫-কে বর্গ করলে কত হবে? আবার ভাবনায় পড়ে গেছ? আছে সহজ সমাধান। উত্তর ৬২৫। কীভাবে বের করলাম? বইয়ের মধ্যে আছে বিস্তারিত লেখা। বৃত্তের সাহায্যে যেকোনো গুণ করা যাবে মুহূর্তে। যোগ, বিয়োগ ও ভাগেরও সমাধান করা যাবে। সঙ্গে আছে ভগ্নাংশের যোগ, বিয়োগ, গুণ ও ভাগ। এ বইয়ের সাহায্যে তুমি তোমার বন্ধুদের চেয়ে একধাপ এগিয়ে থাকতে পারবে। গণিতের এই আনন্দযজ্ঞে তোমাকে স্বাগতম",
+    "price": 300,
+    "pages": 112,
+    "cover": "/images/books_cover/GotniterChomok.jpg",
+    "categories": ["গণিত"],
+    "rating": 5,
+    "ratedByUser": 132,
+    "publisher": "স্বপ্ন ৭১ প্রকাশন",
+    "edition": 1,
+    "language": "বাংলা",
+    "ISBN": "9789849853299",
+    "size": "13.5 x 1.5 x 20.5 cm",
+    "timeToRead": 6,
+    "isNew": true,
+    "publishedDate": "2025-01-24T18:10:33−12:00",
+    "year": "2025",
+    "purchaseLink": [
+      {
+        "logo": "/images/publishers/rokomari.png",
+        "link": "https://www.rokomari.com/book/448176/goniter-chomok"
+      }
+    ]
+  },
+  {
+    "id": 4,
     "title": "বুদ্ধির খেলা সুডোকু",
     "author": "কাজী আকাশ",
+    "shortDescription": "তুমি বন্ধুদের চেয়ে একধাপ এগিয়ে থাকতে চাও? তাহলে গণিতের এই জাদুমঞ্চে তোমাকে স্বাগতম। মুহূর্তে যোগ, বিয়োগ, গুণ ও ভাগ করার ম্যাজিক আছে এই বইয়ে।",
     "description": "এই বইয়ে মোট ২০০টি সুডোকু রয়েছে। সবার শুরুতে রয়েছে তুলনামূলক সহজ সুডোকু। প্রথমটা থেকে দ্বিতীয়টা একটু কঠিন। এর পরেরটা আরেকটু কঠিন। অর্থাৎ বইয়ের যত গভীরে যাওয়া যাবে, সুডোকু হবে তত চ্যালেঞ্জিং। তত বেশি বুদ্ধি খাটাতে হবে সমাধানের জন্য। ফলে যাঁরা এই বইয়ের সাহায্যে সুডোকু সমাধান শুরু করবেন,তাঁরা যেমন আনন্দ পাবেন, তেমনি যাঁরা আগে থেকে সুডোকু সমাধান করতে পারেন তাঁরাও হতাশ হবেন না।",
     "price": 200,
     "pages": 176,
@@ -33,50 +113,28 @@
     "language": "বাংলা",
     "ISBN": "9789849171726",
     "size": "13.5 x 1.5 x 20.5 cm",
-    "timeToRead": 10
-  },
-  {
-    "id": 3,
-    "title": "গণিতের খেলা গণিতের মজা",
-    "author": "কাজী আকাশ",
-    "description": "বইটিতে গণিতের ১০০টি ধাঁধা আছে। এই ধাঁধাগুলো সমাধান করলে নতুন সমস্যা সমাধানের আনন্দ যেমন পাওয়া যাবে, তেমনি বাড়বে সৃজনশীল দক্ষতা। পাঠক বুঝতে পারবেন গণিতচর্চার আনন্দ। গণিতের এ আনন্দযজ্ঞে স্বাগতম আপনাকে",
-    "price": 200,
-    "pages": 94,
-    "cover": "/images/books_cover/GoniterKhela.jpg",
-    "categories": ["গণিত", "ধাঁধা"],
-    "rating": 5,
-    "ratedByUser": 132,
-    "publisher": "প্রথমা প্রকাশন",
-    "edition": 1,
-    "language": "বাংলা",
-    "ISBN": "9789849171726",
-    "size": "13.5 x 1.5 x 20.5 cm",
-    "timeToRead": 6
-  },
-  {
-    "id": 4,
-    "title": "গণিতের খেলা গণিতের মজা",
-    "author": "কাজী আকাশ",
-    "description": "বইটিতে গণিতের ১০০টি ধাঁধা আছে। এই ধাঁধাগুলো সমাধান করলে নতুন সমস্যা সমাধানের আনন্দ যেমন পাওয়া যাবে, তেমনি বাড়বে সৃজনশীল দক্ষতা। পাঠক বুঝতে পারবেন গণিতচর্চার আনন্দ। গণিতের এ আনন্দযজ্ঞে স্বাগতম আপনাকে",
-    "price": 200,
-    "pages": 94,
-    "cover": "/images/books_cover/GoniterKhela.jpg",
-    "categories": ["গণিত", "ধাঁধা"],
-    "rating": 5,
-    "ratedByUser": 132,
-    "publisher": "প্রথমা প্রকাশন",
-    "edition": 1,
-    "language": "বাংলা",
-    "ISBN": "9789849171726",
-    "size": "13.5 x 1.5 x 20.5 cm",
-    "timeToRead": 6
+    "timeToRead": 10,
+    "isNew": false,
+    "publishedDate": "2025-01-24T18:10:33−12:00",
+    "year": "2024",
+    "purchaseLink": [
+      {
+        "logo": "/images/publishers/rokomari.png",
+        "link": "https://www.rokomari.com/book/381176/buddir-khela-sudoku"
+      },
+      {
+        "logo": "/images/publishers/baatighar.png",
+        "link": "https://baatighar.com/shop/9789849808077-96235"
+      }
+    ]
   },
   {
     "id": 5,
     "title": "গণিতের খেলা গণিতের মজা",
     "author": "কাজী আকাশ",
+    "shortDescription": "তুমি বন্ধুদের চেয়ে একধাপ এগিয়ে থাকতে চাও? তাহলে গণিতের এই জাদুমঞ্চে তোমাকে স্বাগতম। মুহূর্তে যোগ, বিয়োগ, গুণ ও ভাগ করার ম্যাজিক আছে এই বইয়ে।",
     "description": "বইটিতে গণিতের ১০০টি ধাঁধা আছে। এই ধাঁধাগুলো সমাধান করলে নতুন সমস্যা সমাধানের আনন্দ যেমন পাওয়া যাবে, তেমনি বাড়বে সৃজনশীল দক্ষতা। পাঠক বুঝতে পারবেন গণিতচর্চার আনন্দ। গণিতের এ আনন্দযজ্ঞে স্বাগতম আপনাকে",
-    "price": 200,
+    "price": 250,
     "pages": 94,
     "cover": "/images/books_cover/GoniterKhela.jpg",
     "categories": ["গণিত", "ধাঁধা"],
@@ -85,26 +143,38 @@
     "publisher": "প্রথমা প্রকাশন",
     "edition": 1,
     "language": "বাংলা",
-    "ISBN": "9789849171726",
+    "ISBN": "9789849789827",
     "size": "13.5 x 1.5 x 20.5 cm",
-    "timeToRead": 6
-  },
-  {
-    "id": 6,
-    "title": "গণিতের খেলা গণিতের মজা",
-    "author": "কাজী আকাশ",
-    "description": "বইটিতে গণিতের ১০০টি ধাঁধা আছে। এই ধাঁধাগুলো সমাধান করলে নতুন সমস্যা সমাধানের আনন্দ যেমন পাওয়া যাবে, তেমনি বাড়বে সৃজনশীল দক্ষতা। পাঠক বুঝতে পারবেন গণিতচর্চার আনন্দ। গণিতের এ আনন্দযজ্ঞে স্বাগতম আপনাকে",
-    "price": 200,
-    "pages": 94,
-    "cover": "/images/books_cover/GoniterKhela.jpg",
-    "categories": ["গণিত", "ধাঁধা"],
-    "rating": 5,
-    "ratedByUser": 132,
-    "publisher": "প্রথমা প্রকাশন",
-    "edition": 1,
-    "language": "বাংলা",
-    "ISBN": "9789849171726",
-    "size": "13.5 x 1.5 x 20.5 cm",
-    "timeToRead": 6
+    "timeToRead": 6,
+    "isNew": false,
+    "publishedDate": "2025-01-24T18:10:33−12:00",
+    "year": "2024",
+    "purchaseLink": [
+      {
+        "logo": "/images/publishers/amazonLogo.jpeg",
+        "link": "https://www.amazon.com/%E0%A6%97%E0%A6%A3%E0%A6%BF%E0%A6%A4%E0%A7%87%E0%A6%B0-%E0%A6%96%E0%A7%87%E0%A6%B2%E0%A6%BE-Goniter-Khela-Moja/dp/9849779829"
+      },
+      {
+        "logo": "/images/publishers/prothomadotcom.jpg",
+        "link": "https://www.prothoma.com/product/35260/goniter-khela-goniter-moja"
+      },
+
+      {
+        "logo": "/images/publishers/wafilife.webp",
+        "link": "https://www.wafilife.com/goniter-khela-goniter-moja/dp/812018"
+      },
+      {
+        "logo": "/images/publishers/rokomari.png",
+        "link": "https://www.rokomari.com/book/331303/goniter-khela-goniter-moja"
+      },
+      {
+        "logo": "/images/publishers/pbs.png",
+        "link": "https://www.pbs.com.bd/book/2303259/goniter-khela-goniter-moja"
+      },
+      {
+        "logo": "/images/publishers/baatighar.png",
+        "link": "https://baatighar.com/shop/9789849779827-90082"
+      }
+    ]
   }
 ]

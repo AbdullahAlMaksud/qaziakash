@@ -8,201 +8,155 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import AuthorContactInfo from "@/pages/contact/authorContactInfo";
 import { FaEdit } from "react-icons/fa";
-import { FaEnvelope, FaPhone, FaUser, FaWhatsapp } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaLinkedin,
+  FaPaperPlane,
+  FaPhone,
+  FaUser,
+} from "react-icons/fa6";
 
 const faqData = [
   {
-    category: "General",
-    questions: [
-      {
-        question: "What is Qaziakash.com?",
-        answer:
-          "Qaziakash.com is a platform dedicated to publishing engaging and well-researched feature articles on science, mathematics, and history.",
-      },
-      {
-        question: "Who writes the articles on this website?",
-        answer:
-          "Our articles are written by experienced feature writers with backgrounds in science, mathematics, and history.",
-      },
-      {
-        question: "Can I submit my own articles?",
-        answer:
-          "Yes! We welcome guest submissions from writers. Check our submission guidelines for more details.",
-      },
-    ],
+    question: "এই ওয়েবসাইটে কি দেখা যাবে?",
+    answer:
+      "এই ওয়েবসাইটে নিয়মিত লেখা প্রকাশ করা হয়। মহাকাশ, পদার্থবিজ্ঞান, গণিত, প্রযুক্তি, জীববিজ্ঞান, রসায়নসহ বিভিন্ন বিষয়ের ওপর লেখা পাবেন। পাশাপাশি লেখকের বই সম্পর্কেও বিস্তারিত জানতে পারবেন এবং কিছু অধ্যায় ফ্রিতে পড়তে পারবেন। এছাড়াও সহজেই লেখকের সঙ্গে যোগাযোগ করা যাবে।",
   },
   {
-    category: "Science",
-    questions: [
-      {
-        question: "Are your science articles peer-reviewed?",
-        answer:
-          "While we strive for accuracy and consult reliable sources, our articles are not formally peer-reviewed like academic journals.",
-      },
-      {
-        question: "Do you cover all branches of science?",
-        answer:
-          "Yes! We write about physics, chemistry, biology, astronomy, environmental science, and more.",
-      },
-    ],
+    question: "আপনার সম্পর্কে জানতে চাই...",
+    answer:
+      "আমার নাম কাজী আকাশ। আমি দেশের সবচেয়ে বড় বিজ্ঞানবিষয়ক মাসিক ম্যাগাজিন ‘বিজ্ঞানচিন্তা’র সহসম্পাদক হিসেবে কর্মরত। ছোটদের ম্যাগাজিন ‘কিশোর আলো’তেও নিয়মিত লিখি। গণিত ও বিজ্ঞান সহজ ভাষায় সবার কাছে পৌঁছে দেওয়াই আমার লক্ষ্য।",
   },
   {
-    category: "Mathematics",
-    questions: [
-      {
-        question: "Are your math articles suitable for beginners?",
-        answer:
-          "Yes! We write for a broad audience, from beginners to advanced learners.",
-      },
-      {
-        question: "Do you provide math problem-solving guides?",
-        answer:
-          "Yes! Some of our articles include step-by-step solutions to famous mathematical problems.",
-      },
-    ],
+    question: "আমি কি নিজের লেখা এখানে প্রকাশ করতে পারব?",
+    answer:
+      "হ্যাঁ, তবে শুধু লেখকের বইয়ের রিভিউ প্রকাশ করা যাবে। ফিচার বা অন্যান্য লেখা এখানে প্রকাশ করা সম্ভব নয়। এই ওয়েবসাইটটি মূলত লেখকের নিজস্ব লেখার জন্যই নির্ধারিত।",
+  },
+  {
+    question: "আপনি কি বিজ্ঞানের সব বিষয় নিয়ে লেখেন?",
+    answer:
+      "আমি বিজ্ঞানের প্রায় সব বিষয় নিয়েই লিখি। তবে গণিত আমার বিশেষ প্রিয়। পাশাপাশি ইতিহাস, খেলাধুলাসহ অন্যান্য বিষয়েও লেখালেখি করি। তবে কবিতা, ছড়া বা গল্প লিখি না, তবে গল্প ও উপন্যাস অনুবাদ করি।",
+  },
+  {
+    question: "আপনি কি গণিতের সমস্যা সমাধান করে দেবেন?",
+    answer:
+      "হ্যাঁ এবং না—দুইভাবেই বলা যায়। ক্লাসের গণিত বইয়ের সমাধান দেওয়া হয় না। তবে যদি কোনো গাণিতিক সমস্যা নিয়ে লেখা প্রয়োজন হয়, আমি তা লেখার চেষ্টা করব। আমার লক্ষ্য গণিতভীতি দূর করা এবং গণিতকে ভালোবাসতে শেখানো।",
+  },
+  {
+    question: "আপনার বইগুলো কোথায় কিনতে পাবো?",
+    answer:
+      "এই ওয়েবসাইট থেকে সরাসরি বই কেনা যাবে। এছাড়া রকমারি, প্রথমা, পিবিএসসহ বিভিন্ন অনলাইন এবং অফলাইন দোকানেও পাওয়া যাবে। সরাসরি লেখকের কাছ থেকে কিনলে ৩০% ছাড় পাওয়া যাবে।",
   },
 ];
+
+const title = "যোগাযোগ রাখুন";
+const description =
+  "সরাসরি আমাকে কিছু জানাতে চাইলে আপনার নাম, ইমেইল, ফোন নাম্বার ও বিস্তারিত লিখে পাঠিয়ে দিন। আমি আপনার সঙ্গে যোগাযোগ করব।";
 
 const contactData = [
   {
     id: 2,
-    icon: <FaEnvelope />,
-    title: "Email",
-    description: "qaziakashmath@gmail.com",
+    icon: <FaFacebook />,
+    title: "ফেসবুক",
+    link: "https://www.facebook.com/sohagislam.akash ",
+    shortLink: "Qazi Akash",
   },
   {
     id: 3,
-    icon: <FaPhone />,
-    title: "Phone",
-    description: "+8801711111111",
+    icon: <FaLinkedin />,
+    title: "লিংকডিন",
+    link: "https://www.linkedin.com/in/qazi-akash",
+    shortLink: "Qazi Akash",
   },
   {
     id: 4,
-    icon: <FaWhatsapp />,
-    title: "Whatsapp",
-    description: "+8801711111111",
+    icon: <FaEnvelope />,
+    title: "মেইল",
+    link: "mailto:qaziakash.math@gmail.com",
+    shortLink: "qaziakash.math@gmail.com",
   },
 ];
 
 const page = () => {
   return (
     <section className="-mt-16">
-      <div className="bg-deepblue pt-16 pb-8 lg:py-32 text-white">
-        <div className="flex flex-col items-center font-english">
-          <h2 className="mb-4 text-center text-3xl lg:text-5xl font-bold">
-            Connect with Author
-          </h2>
-          <hr className="w-14 h-0.5 bg-primary mb-4 lg:mb-4" />
-        </div>
-      </div>
-
       {/* Keep in touch section */}
-      <section className="flex flex-col lg:flex-row w-11/12 lg:container gap-8 lg:gap-20 mx-auto lg:px-24 lg:my-16 mt-8 items-center justify-between">
+      <section className="flex pt-16 flex-col lg:flex-row w-11/12 lg:container gap-8 lg:gap-20 mx-auto lg:px-24 lg:my-16 mt-8 items-center justify-between">
         {/* Left */}
-        <div className="lg:w-1/2">
-          <h3 className="font-english text-3xl font-bold text-deepblue">
-            Keep in Touch
-          </h3>
-          <hr className="w-14 h-0.5 bg-primary my-4" />
-          <p className="mb-4 font-inter text-sm text-gray-400">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly
-            believable.
-          </p>
-          <div className="flex flex-col gap-2">
-            {contactData.map((item, index) => (
-              <div key={index} className="flex gap-4 font-english">
-                <div className="bg-deepblue w-fit min-w-12 text-xl min-h-12 flex justify-center items-center text-primary">
-                  {item.icon}
-                </div>
-                <div>
-                  <h4 className="text-xl lg:text-2xl font-bold">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm font-inter text-gray-600">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <AuthorContactInfo
+          contactData={contactData}
+          title={title}
+          description={description}
+        />
         {/* Right */}
 
         <div className="lg:w-1/2">
           <form className="flex flex-col gap-2">
             <div className="flex gap-2 items-center justify-between">
-              <div className="relative flex gap-2 border border-lightblue items-center w-1/2">
+              <div className="relative flex gap-2 border border-lightblue items-center rounded w-1/2">
                 <FaUser className="absolute left-2 top-1/2 transform -translate-y-1/2 text-primary" />
                 <Input
-                  className="rounded-none border-none ml-6 shadow-none"
-                  placeholder="Your Name"
+                  className="border-none ml-6 shadow-none"
+                  placeholder="আপনার নাম"
                 />
               </div>
-              <div className="relative flex gap-2 border border-lightblue items-center w-1/2">
+              <div className="relative flex gap-2 border border-lightblue items-center rounded w-1/2">
                 <FaEnvelope className="absolute left-2 top-1/2 transform -translate-y-1/2 text-primary" />
                 <Input
-                  className="rounded-none border-none ml-6 shadow-none"
-                  placeholder="Your Email"
+                  className="border-none ml-6 shadow-none"
+                  placeholder="ইমেইল অ্যাড্রেস"
                 />
               </div>
             </div>
-            <div className="relative flex gap-2 border border-lightblue items-center w-full">
+            <div className="relative flex gap-2 border border-lightblue items-center rounded w-full">
               <FaPhone className="absolute left-2 top-1/2 transform -translate-y-1/2 text-primary" />
               <Input
-                className="rounded-none border-none ml-6 shadow-none"
-                placeholder="Your Phone"
+                className="border-none ml-6 shadow-none"
+                placeholder="ফোন নাম্বার"
               />
             </div>
-            <div className="relative flex gap-2 border border-lightblue items-center w-full">
+            <div className="relative flex gap-2 border border-lightblue rounded items-center w-full">
               <FaEdit className="absolute left-2 top-2 text-primary" />
               <Textarea
                 className="rounded-none border-none ml-6 shadow-none resize-none h-40"
-                placeholder="Your Message"
+                placeholder="এখানে মেসেজ লিখুন..."
               />
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="hidden items-center gap-2">
               <Checkbox className="shadow-none" />
-              <p className="text-xs text-gray-500 capitalize">
-                passages of Lorem Ipsum available, have suffered alteration in
-                some form.
-              </p>
+              <p className="text-xs text-gray-500 capitalize">আমি</p>
             </div>
             <div>
-              <Button className="flex rounded-none shadow-none w-full">
-                Send a message
+              <Button className="flex rounded shadow-none w-full">
+                পাঠিয়ে দিন <FaPaperPlane />
               </Button>
             </div>
           </form>
         </div>
       </section>
 
-      <section className="bg-lightblue py-8 mt-8 lg:mt-0 lg:py-16">
+      <section className="bg-secondary py-8 mt-8 lg:mt-0 lg:py-16">
         <section className="w-11/12 lg:container mx-auto">
           <h3 className="text-2xl lg:text-3xl font-bold text-center">
-            Frequently Asked Questions
+            প্রায়শ জিজ্ঞাসিত প্রশ্নগুলো
           </h3>
           <hr className="w-14 h-0.5 bg-primary my-4 mx-auto" />
 
           <Accordion
             type="single"
             collapsible
-            className="w-full grid md:grid-cols-2 gap-4"
+            className="w-9/12 mx-auto grid md:grid-cols-2 gap-4"
           >
-            {faqData.flatMap((category, catIndex) =>
-              category.questions.map((faq, index) => (
-                <AccordionItem
-                  key={`${catIndex}-${index}`}
-                  value={`item-${catIndex}-${index}`}
-                >
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
-                </AccordionItem>
-              ))
-            )}
+            {faqData.map((faq, index) => (
+              <AccordionItem key={index} value={index.toString()}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </section>
       </section>

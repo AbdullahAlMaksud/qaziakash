@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BannerAd = () => {
   return (
-    <section className="bg-deepblue  py-20">
+    <section className="bg-primary  py-20">
       <div className="w-10/12 lg:container mx-auto flex flex-col-reverse lg:flex-row text-white justify-center lg:justify-normal items-center gap-5 lg:px-20">
         <div className="">
           <h2 className="mb-4 text-3xl lg:text-5xl uppercase font-english font-bold ">
